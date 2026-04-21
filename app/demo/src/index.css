@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  color: #fafaf9;
+  background: #0c0a09;
+  font-family: "Suisse Intl", "Avenir Next", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
