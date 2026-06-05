@@ -52,6 +52,7 @@ const meta = {
     loading: { control: 'boolean' },
     fullWidth: { control: 'boolean' },
     disabled: { control: 'boolean' },
+    pulse: { control: 'boolean' },
   },
 } satisfies Meta<typeof Button>
 
@@ -174,6 +175,32 @@ export const FullWidth: Story = {
     <div className="flex flex-col gap-3 max-w-sm">
       <Button fullWidth>Confirm Transfer</Button>
       <Button variant="outline" fullWidth>Save as Draft</Button>
+    </div>
+  ),
+}
+
+export const Interactions: Story = {
+  render: () => (
+    <div className="space-y-8 p-6 max-w-lg">
+      <Section label="Press dip — click any button">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Destructive</Button>
+      </Section>
+
+      <Section label="Hover shadow lift — filled variants only">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="destructive">Destructive</Button>
+      </Section>
+
+      <Section label="Pulse ring — opt-in CTA highlight">
+        <Button pulse>Confirm Transfer</Button>
+        <Button variant="destructive" pulse>Delete Account</Button>
+        <Button variant="outline" pulse>Save as Draft</Button>
+      </Section>
     </div>
   ),
 }

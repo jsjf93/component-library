@@ -79,4 +79,32 @@
   --shadow-md: 0 4px 6px -1px hsl(220 13% 11% / 0.07), 0 2px 4px -2px hsl(220 13% 11% / 0.05);
   --shadow-lg: 0 10px 15px -3px hsl(220 13% 11% / 0.08), 0 4px 6px -4px hsl(220 13% 11% / 0.05);
   --shadow-xl: 0 20px 25px -5px hsl(220 13% 11% / 0.08), 0 8px 10px -6px hsl(220 13% 11% / 0.04);
+
+}
+
+@keyframes button-pulse {
+  0%   { box-shadow: 0 0 0 0   color-mix(in srgb, var(--button-pulse-color, currentColor) 30%, transparent); }
+  100% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--button-pulse-color, currentColor) 0%,  transparent); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@layer utilities {
+  .animate-button-pulse {
+    animation: button-pulse 1.5s ease-out infinite;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 150ms ease both;
+  }
+  .animate-scale-in {
+    animation: scale-in 100ms ease both;
+  }
 }
