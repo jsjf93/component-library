@@ -11,7 +11,7 @@ const BOX =
   'size-4 shrink-0 rounded-md border-2 flex items-center justify-center mt-0.5 ' +
   'border-border bg-background ' +
   'group-has-[:checked]:border-primary group-has-[:checked]:bg-primary ' +
-  'group-has-[:focus-visible]:ring-2 group-has-[:focus-visible]:ring-primary/25 group-has-[:focus-visible]:ring-offset-1 ' +
+  'group-has-[:focus-visible]:border-primary ' +
   'transition-[background-color,border-color] duration-150 ease'
 
 const CHECKMARK =

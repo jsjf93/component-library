@@ -11,12 +11,12 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
 const BASE =
   'w-full appearance-none rounded-lg border bg-background text-sm text-foreground ' +
   'h-10 pl-3 pr-9 ' +
-  'transition-[border-color,box-shadow] duration-150 ease ' +
-  'focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 ' +
+  'transition-[border-color] duration-150 ease ' +
+  'focus-visible:outline-none focus-visible:border-primary ' +
   'disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'
 
 const BORDER_DEFAULT = 'border-border'
-const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive focus-visible:ring-destructive/20'
+const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
 
 function ChevronIcon() {
   return (

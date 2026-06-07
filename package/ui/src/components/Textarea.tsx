@@ -11,12 +11,12 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 const BASE =
   'w-full rounded-lg border bg-background text-sm text-foreground placeholder:text-muted-foreground ' +
   'px-3 py-2 min-h-24 resize-y ' +
-  'transition-[border-color,box-shadow] duration-150 ease ' +
-  'focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 ' +
+  'transition-[border-color] duration-150 ease ' +
+  'focus-visible:outline-none focus-visible:border-primary ' +
   'disabled:opacity-50 disabled:cursor-not-allowed'
 
 const BORDER_DEFAULT = 'border-border'
-const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive focus-visible:ring-destructive/20'
+const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (

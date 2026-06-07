@@ -12,14 +12,14 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
 
 const BASE =
   'w-full rounded-lg border bg-background text-sm text-foreground placeholder:text-muted-foreground ' +
-  'transition-[border-color,box-shadow] duration-150 ease ' +
-  'focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 ' +
+  'transition-[border-color] duration-150 ease ' +
+  'focus-visible:outline-none focus-visible:border-primary ' +
   'disabled:opacity-50 disabled:cursor-not-allowed ' +
   'read-only:bg-muted read-only:text-muted-foreground read-only:cursor-default ' +
-  'read-only:focus-visible:border-border read-only:focus-visible:ring-0'
+  'read-only:focus-visible:border-border'
 
 const BORDER_DEFAULT = 'border-border'
-const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive focus-visible:ring-destructive/20'
+const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
 
 const PADDING: Record<InputVariant, string> = {
   default:  'h-10 px-3 py-2',
@@ -140,7 +140,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               type="button"
               onClick={() => setShowPassword(v => !v)}
               aria-label={showPassword ? 'Hide password' : 'Show password'}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 rounded"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
             >
               <EyeIcon open={showPassword} />
             </button>
