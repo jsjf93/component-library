@@ -3,63 +3,7 @@ import { Card } from './Card'
 import { StatCard } from './StatCard'
 import { Badge } from './Badge'
 import { Button } from './Button'
-
-function WalletIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="2" y="5" width="20" height="14" rx="2" />
-      <path d="M16 12h.01" strokeWidth="2.5" />
-      <path d="M2 10h20" />
-    </svg>
-  )
-}
-
-function BarChartIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="3" y="12" width="4" height="9" rx="1" />
-      <rect x="10" y="7" width="4" height="14" rx="1" />
-      <rect x="17" y="3" width="4" height="18" rx="1" />
-    </svg>
-  )
-}
-
-function PaymentIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="2" y="5" width="20" height="14" rx="2" />
-      <line x1="12" y1="9" x2="12" y2="15" />
-      <line x1="9" y1="12" x2="15" y2="12" />
-    </svg>
-  )
-}
-
-function CreditCardIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="2" y="5" width="20" height="14" rx="2" />
-      <line x1="2" y1="10" x2="22" y2="10" />
-    </svg>
-  )
-}
-
-function SendIcon() {
-  return (
-    <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <line x1="22" y1="2" x2="11" y2="13" />
-      <polygon points="22 2 15 22 11 13 2 9 22 2" />
-    </svg>
-  )
-}
-
-function MoveIcon() {
-  return (
-    <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <line x1="7" y1="17" x2="17" y2="7" />
-      <polyline points="7 7 17 7 17 17" />
-    </svg>
-  )
-}
+import { Wallet, BarChart, Payment, CreditCard, Send, Move } from '@borderline/icons'
 
 const meta = {
   title: 'Components/Card',
@@ -100,25 +44,25 @@ export const Showcase: Story = {
           <StatCard
             title="Total Balance"
             value="$128,400"
-            icon={<WalletIcon />}
+            icon={<Wallet className="size-5" />}
             trend={{ value: '+4.2% vs last month', direction: 'up' }}
           />
           <StatCard
             title="Monthly Revenue"
             value="$34,200"
-            icon={<BarChartIcon />}
+            icon={<BarChart className="size-5" />}
             trend={{ value: '+11.8% vs last month', direction: 'up' }}
           />
           <StatCard
             title="Pending Payments"
             value="$8,750"
-            icon={<PaymentIcon />}
+            icon={<Payment className="size-5" />}
             trend={{ value: '-2.1% vs last month', direction: 'down' }}
           />
           <StatCard
             title="Accounts Active"
             value="12"
-            icon={<CreditCardIcon />}
+            icon={<CreditCard className="size-5" />}
             trend={{ value: '+3 vs last month', direction: 'up' }}
           />
         </div>
@@ -141,8 +85,8 @@ export const Showcase: Story = {
               </p>
             </div>
             <div className="mt-auto flex gap-2">
-              <Button variant="outline" className="flex-1"><SendIcon /> Send</Button>
-              <Button variant="outline" className="flex-1"><MoveIcon /> Move</Button>
+              <Button variant="outline" className="flex-1"><Send /> Send</Button>
+              <Button variant="outline" className="flex-1"><Move /> Move</Button>
             </div>
           </Card>
 
@@ -230,8 +174,8 @@ export const ContentCards: Story = {
           <p className="mt-2 text-sm text-muted-foreground tracking-widest">···· ···· ···· 4821</p>
         </div>
         <div className="mt-auto flex gap-2">
-          <Button variant="outline" className="flex-1"><SendIcon /> Send</Button>
-          <Button variant="outline" className="flex-1"><MoveIcon /> Move</Button>
+          <Button variant="outline" className="flex-1"><Send /> Send</Button>
+          <Button variant="outline" className="flex-1"><Move /> Move</Button>
         </div>
       </Card>
 

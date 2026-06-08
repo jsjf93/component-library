@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import type { ButtonHTMLAttributes } from 'react'
+import { Spinner } from '@borderline/icons'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'destructive'
 export type ButtonSize = 'sm' | 'default' | 'lg' | 'icon'
@@ -45,23 +46,6 @@ const SIZES: Record<ButtonSize, string> = {
   icon: 'h-10 w-10 rounded-lg',
 }
 
-function Spinner() {
-  return (
-    <svg
-      className="size-4 shrink-0 animate-spin"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-    >
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-      />
-    </svg>
-  )
-}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
