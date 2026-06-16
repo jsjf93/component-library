@@ -1,5 +1,6 @@
 import { forwardRef, useId } from 'react'
 import type { SelectHTMLAttributes } from 'react'
+import { ChevronDown } from '@borderline/icons'
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string
@@ -18,22 +19,6 @@ const BASE =
 const BORDER_DEFAULT = 'border-border'
 const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
 
-function ChevronIcon() {
-  return (
-    <svg
-      className="size-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
-  )
-}
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
@@ -83,7 +68,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             {children}
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-muted-foreground">
-            <ChevronIcon />
+            <ChevronDown />
           </div>
         </div>
         {error ? (

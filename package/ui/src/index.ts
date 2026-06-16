@@ -29,3 +29,36 @@ export type { CardProps, CardVariant } from './components/Card'
 
 export { StatCard } from './components/StatCard'
 export type { StatCardProps, StatCardTrend } from './components/StatCard'
+
+export { Alert } from './components/Alert'
+export type { AlertProps, AlertVariant } from './components/Alert'
+
+export { Spinner } from './components/Spinner'
+export type { SpinnerProps, SpinnerSize } from './components/Spinner'
+
+export { Progress } from './components/Progress'
+export type { ProgressProps } from './components/Progress'
+
+export { Skeleton } from './components/Skeleton'
+export type { SkeletonProps } from './components/Skeleton'
+
+export { Avatar } from './components/Avatar'
+export type { AvatarProps, AvatarSize } from './components/Avatar'
+
+export { Sidebar } from './components/sidebar/Sidebar'
+export type { SidebarProps } from './components/sidebar/Sidebar'
+
+export { SidebarHeader } from './components/sidebar/SidebarHeader'
+export type { SidebarHeaderProps } from './components/sidebar/SidebarHeader'
+
+export { SidebarNav } from './components/sidebar/SidebarNav'
+export type { SidebarNavProps } from './components/sidebar/SidebarNav'
+
+export { SidebarItem } from './components/sidebar/SidebarItem'
+export type { SidebarItemProps } from './components/sidebar/SidebarItem'
+
+export { SidebarFooter } from './components/sidebar/SidebarFooter'
+export type { SidebarFooterProps } from './components/sidebar/SidebarFooter'
+
+export { AppShell } from './components/AppShell'
+export type { AppShellProps } from './components/AppShell'

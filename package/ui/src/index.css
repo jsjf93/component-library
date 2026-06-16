@@ -87,6 +87,11 @@
   100% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--button-pulse-color, currentColor) 0%,  transparent); }
 }
 
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -100,6 +105,9 @@
 @layer utilities {
   .animate-button-pulse {
     animation: button-pulse 1.5s ease-out infinite;
+  }
+  .animate-skeleton-pulse {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
   }
   .animate-fade-in-up {
     animation: fade-in-up 150ms ease both;

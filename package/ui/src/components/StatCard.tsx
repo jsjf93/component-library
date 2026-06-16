@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 import type { ReactNode } from 'react'
 import { Card } from './Card'
+import { TrendUp, TrendDown } from '@borderline/icons'
 
 export type StatCardTrend = {
   value: string
@@ -15,23 +16,6 @@ export type StatCardProps = {
   className?: string
 }
 
-function TrendUpIcon() {
-  return (
-    <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-      <polyline points="16 7 22 7 22 13" />
-    </svg>
-  )
-}
-
-function TrendDownIcon() {
-  return (
-    <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
-      <polyline points="16 17 22 17 22 11" />
-    </svg>
-  )
-}
 
 export const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
   ({ title, value, icon, trend, className }, ref) => (
@@ -54,7 +38,7 @@ export const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
             trend.direction === 'up' ? 'text-success-foreground' : 'text-danger-foreground',
           ].join(' ')}
         >
-          {trend.direction === 'up' ? <TrendUpIcon /> : <TrendDownIcon />}
+          {trend.direction === 'up' ? <TrendUp className="size-4 shrink-0" /> : <TrendDown className="size-4 shrink-0" />}
           <span>{trend.value}</span>
         </div>
       )}
