@@ -11,6 +11,9 @@ export default defineConfig({
       fileName: 'index',
       cssFileName: 'styles',
     },
+    // Keep the .d.ts files emitted by `tsc` in the same `dist` (vite would
+    // otherwise empty the directory before writing the JS bundle).
+    emptyOutDir: false,
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },

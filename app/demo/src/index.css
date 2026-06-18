@@ -1,9 +1,13 @@
 @import "tailwindcss";
+/* Design tokens (so demo-authored utilities like bg-primary resolve) … */
+@import "@borderline/ui/theme.css";
+/* … and the compiled component classes (.ui-button, .ui-card, etc.). */
+@import "@borderline/ui/styles.css";
 
 :root {
-  color: #fafaf9;
-  background: #0c0a09;
-  font-family: "Suisse Intl", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
