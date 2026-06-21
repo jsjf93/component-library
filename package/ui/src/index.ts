@@ -62,3 +62,6 @@ export type { SidebarFooterProps } from './components/sidebar/SidebarFooter'
 
 export { AppShell } from './components/AppShell'
 export type { AppShellProps } from './components/AppShell'
+
+export { Modal, ModalHeader, ModalBody, ModalFooter } from './components/modal/Modal'
+export type { ModalProps, ModalHeaderProps, ModalBodyProps, ModalFooterProps, ModalSize } from './components/modal/Modal'
