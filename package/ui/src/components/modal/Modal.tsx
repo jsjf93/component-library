@@ -1,8 +1,10 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useId, createContext, useContext } from 'react'
 import { createPortal } from 'react-dom'
 import type { HTMLAttributes, ReactNode } from 'react'
 import { Button } from '../Button'
 import { X } from '@borderline/icons'
+
+const ModalTitleIdContext = createContext<string | undefined>(undefined)
 
 export type ModalSize = 'sm' | 'md' | 'lg'
 
@@ -34,14 +36,18 @@ const FOCUSABLE =
 export function Modal({ open, onClose, size = 'md', children }: ModalProps) {
   const panelRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<Element | null>(null)
+  const hasOpenedRef = useRef(false)
+  const titleId = useId()
 
   useEffect(() => {
     if (open) {
+      hasOpenedRef.current = true
       triggerRef.current = document.activeElement
       const firstFocusable = panelRef.current?.querySelector<HTMLElement>(FOCUSABLE)
       ;(firstFocusable ?? panelRef.current)?.focus()
-    } else {
+    } else if (hasOpenedRef.current) {
       ;(triggerRef.current as HTMLElement | null)?.focus()
+      triggerRef.current = null
     }
   }, [open])
 
@@ -94,7 +100,7 @@ export function Modal({ open, onClose, size = 'md', children }: ModalProps) {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="modal-title"
+        aria-labelledby={titleId}
         tabIndex={-1}
         className={[
           'ui-modal-panel relative w-full bg-card border border-border rounded-2xl shadow-xl flex flex-col max-h-[90vh] outline-none animate-modal-panel-in',
@@ -102,7 +108,9 @@ export function Modal({ open, onClose, size = 'md', children }: ModalProps) {
         ].join(' ')}
         onClick={(e) => e.stopPropagation()}
       >
-        {children}
+        <ModalTitleIdContext.Provider value={titleId}>
+          {children}
+        </ModalTitleIdContext.Provider>
       </div>
     </div>,
     document.body,
@@ -112,6 +120,7 @@ export function Modal({ open, onClose, size = 'md', children }: ModalProps) {
 Modal.displayName = 'Modal'
 
 export function ModalHeader({ title, onClose, className, ...props }: ModalHeaderProps) {
+  const titleId = useContext(ModalTitleIdContext)
   return (
     <div
       className={['flex items-center justify-between gap-4 px-6 py-4 border-b border-border', className]
@@ -119,7 +128,7 @@ export function ModalHeader({ title, onClose, className, ...props }: ModalHeader
         .join(' ')}
       {...props}
     >
-      <h2 id="modal-title" className="text-lg font-semibold text-foreground leading-tight">
+      <h2 id={titleId} className="text-lg font-semibold text-foreground leading-tight">
         {title}
       </h2>
       {onClose && (
