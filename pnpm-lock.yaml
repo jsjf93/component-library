@@ -117,9 +117,6 @@ importers:
 
   package/ui:
     dependencies:
-      '@borderline/icons':
-        specifier: workspace:*
-        version: link:../icons
       react:
         specifier: ^19.2.5
         version: 19.2.5
@@ -127,6 +124,9 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
+      '@borderline/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@eslint/js':
         specifier: ^9.39.4
         version: 9.39.4

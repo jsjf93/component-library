@@ -4,3 +4,5 @@ storybook-static
 .DS_Store
 *.tsbuildinfo
 coverage
+# packed artifacts
+*.tgz

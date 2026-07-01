@@ -1,5 +1,6 @@
 {
   "name": "component-library",
+  "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@10.33.0",
   "scripts": {
@@ -10,6 +11,7 @@
     "dev:demo": "pnpm --filter demo dev",
     "storybook": "pnpm --filter @borderline/ui storybook",
     "build-storybook": "pnpm --filter @borderline/ui build-storybook",
-    "lint": "pnpm -r lint"
+    "lint": "pnpm -r lint",
+    "release": "pnpm --filter \"@borderline/*\" publish --no-git-checks"
   }
 }

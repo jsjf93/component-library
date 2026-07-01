@@ -1,19 +1,36 @@
 {
   "name": "@borderline/icons",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Hand-authored SVG icon components for React, used by @borderline/ui.",
+  "keywords": ["react", "icons", "svg", "components", "borderline"],
+  "license": "MIT",
+  "author": "Joshua Foster <jsjf93@hotmail.co.uk>",
+  "homepage": "https://github.com/jsjf93/component-library/tree/main/package/icons#readme",
+  "bugs": "https://github.com/jsjf93/component-library/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsjf93/component-library.git",
+    "directory": "package/icons"
+  },
   "type": "module",
   "files": ["dist"],
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
+    "prepublishOnly": "pnpm run build",
     "lint": "eslint ."
   },
   "peerDependencies": {
