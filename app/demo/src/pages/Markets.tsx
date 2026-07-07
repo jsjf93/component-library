@@ -1,34 +1,62 @@
-import { Suspense, use, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Card, Input, Skeleton } from '@borderline/ui'
-import { PageHeading } from '../components/PageHeading'
-import { PriceTicker } from '../components/PriceTicker'
-import { ErrorBoundary } from '../components/ErrorBoundary'
-import { useSettings } from '../state/SettingsContext'
-import { assetPairsResource, resetAssetPairs } from '../lib/data'
-import type { Pair } from '../lib/kraken'
-import type { Currency } from '../lib/format'
+import { Suspense, use, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { Card, Input, Skeleton, Tab, TabList, Tabs } from "@borderline/ui";
+import { PageHeading } from "../components/PageHeading";
+import { PriceTicker } from "../components/PriceTicker";
+import { ErrorBoundary } from "../components/ErrorBoundary";
+import { useSettings } from "../state/SettingsContext";
+import { assetPairsResource, resetAssetPairs } from "../lib/data";
+import type { Pair } from "../lib/kraken";
+import type { Currency } from "../lib/format";
 
-/** Curated set of well-known assets to surface first. */
-const POPULAR = [
-  'BTC', 'ETH', 'SOL', 'XRP', 'ADA', 'DOGE',
-  'DOT', 'LINK', 'LTC', 'AVAX', 'ATOM', 'TRX',
-]
+type Category = "all" | "layer1" | "defi" | "payments" | "meme" | "stablecoin";
+
+const CATEGORIES: { value: Category; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "layer1", label: "Layer 1" },
+  { value: "defi", label: "DeFi" },
+  { value: "payments", label: "Payments" },
+  { value: "meme", label: "Meme" },
+  { value: "stablecoin", label: "Stablecoins" },
+];
+
+const SECTORS: Record<Exclude<Category, "all">, string[]> = {
+  layer1: ["BTC", "ETH", "SOL", "ADA", "AVAX", "DOT", "ATOM", "NEAR", "ALGO"],
+  defi: ["LINK", "UNI", "AAVE", "MKR", "CRV"],
+  payments: ["XRP", "LTC", "BCH", "XLM"],
+  meme: ["DOGE", "SHIB", "PEPE"],
+  stablecoin: ["USDT", "USDC", "DAI"],
+};
+
+const SECTOR_OF: Record<string, Exclude<Category, "all">> = Object.fromEntries(
+  Object.entries(SECTORS).flatMap(([sector, bases]) =>
+    bases.map((base) => [base, sector as Exclude<Category, "all">]),
+  ),
+);
+
+const CATALOG = Object.values(SECTORS).flat();
 
 function MarketList() {
-  const { currency } = useSettings()
-  const pairs = use(assetPairsResource())
-  const [query, setQuery] = useState('')
+  const { currency } = useSettings();
+  const pairs = use(assetPairsResource());
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<Category>("all");
 
   const rows = useMemo(() => {
-    const byCurrency = pairs.filter((p) => p.quote === currency)
-    const popular = POPULAR.map((base) => byCurrency.find((p) => p.base === base)).filter(
-      (p): p is Pair => Boolean(p),
-    )
-    const q = query.trim().toUpperCase()
-    if (!q) return popular
-    return byCurrency.filter((p) => p.base.includes(q)).slice(0, 30)
-  }, [pairs, currency, query])
+    const byCurrency = pairs.filter((p) => p.quote === currency);
+    const q = query.trim().toUpperCase();
+
+    const base = q
+      ? byCurrency.filter((p) => p.base.includes(q)).slice(0, 30)
+      : CATALOG.map((b) => byCurrency.find((p) => p.base === b)).filter(
+          (p): p is Pair => Boolean(p),
+        );
+
+    if (category === "all") return base;
+    return base.filter((p) => SECTOR_OF[p.base] === category);
+  }, [pairs, currency, query, category]);
+
+  const activeLabel = CATEGORIES.find((c) => c.value === category)?.label ?? "";
 
   return (
     <>
@@ -41,11 +69,28 @@ function MarketList() {
         className="max-w-sm"
       />
 
-      <Card className="mt-6 p-2">
+      <div className="mt-6">
+        <Tabs
+          value={category}
+          onValueChange={(v) => setCategory(v as Category)}
+        >
+          <TabList aria-label="Filter assets by sector">
+            {CATEGORIES.map((c) => (
+              <Tab key={c.value} value={c.value}>
+                {c.label}
+              </Tab>
+            ))}
+          </TabList>
+        </Tabs>
+      </div>
+
+      <Card className="mt-4 p-2">
         <ul className="divide-y divide-border">
           {rows.length === 0 && (
             <li className="px-3 py-6 text-center text-sm text-muted-foreground">
-              No assets match “{query}” in {currency}.
+              {query
+                ? `No assets match “${query}”${category === "all" ? "" : ` in ${activeLabel}`} for ${currency}.`
+                : `No ${activeLabel} assets available in ${currency}.`}
             </li>
           )}
           {rows.map((pair) => (
@@ -59,24 +104,34 @@ function MarketList() {
                     {pair.base.slice(0, 3)}
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate font-medium text-foreground">{pair.base}</span>
-                    <span className="block text-sm text-muted-foreground">{pair.wsSymbol}</span>
+                    <span className="block truncate font-medium text-foreground">
+                      {pair.base}
+                    </span>
+                    <span className="block text-sm text-muted-foreground">
+                      {pair.wsSymbol}
+                    </span>
                   </span>
                 </span>
-                <PriceTicker symbol={pair.wsSymbol} quote={pair.quote as Currency} />
+                <PriceTicker
+                  symbol={pair.wsSymbol}
+                  quote={pair.quote as Currency}
+                />
               </Link>
             </li>
           ))}
         </ul>
       </Card>
     </>
-  )
+  );
 }
 
 export default function Markets() {
   return (
     <div className="space-y-2 p-6 md:p-8">
-      <PageHeading title="Markets" subtitle="Live prices for popular pairs, straight from Kraken." />
+      <PageHeading
+        title="Markets"
+        subtitle="Live prices for popular pairs, straight from Kraken."
+      />
       <div className="pt-4">
         <ErrorBoundary label="market data" onReset={resetAssetPairs}>
           <Suspense fallback={<Skeleton className="h-96 w-full" />}>
@@ -85,5 +140,5 @@ export default function Markets() {
         </ErrorBoundary>
       </div>
     </div>
-  )
+  );
 }
