@@ -1,27 +1,13 @@
-import { createContext, useContext, useState } from 'react'
-import type { HTMLAttributes, ReactNode } from 'react'
-
-type TabsContextValue = {
-  value: string
-  setValue: (value: string) => void
-}
-
-const TabsContext = createContext<TabsContextValue | undefined>(undefined)
-
-export function useTabsContext() {
-  const context = useContext(TabsContext)
-  if (!context) {
-    throw new Error('Tab and TabList must be rendered within a Tabs component')
-  }
-  return context
-}
+import { useState } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
+import { TabsContext } from "./TabsContext";
 
 export type TabsProps = HTMLAttributes<HTMLDivElement> & {
-  value?: string
-  defaultValue?: string
-  onValueChange?: (value: string) => void
-  children?: ReactNode
-}
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  children?: ReactNode;
+};
 
 export function Tabs({
   className,
@@ -31,15 +17,15 @@ export function Tabs({
   children,
   ...props
 }: TabsProps) {
-  const [internalValue, setInternalValue] = useState(defaultValue ?? '')
-  const currentValue = value ?? internalValue
+  const [internalValue, setInternalValue] = useState(defaultValue ?? "");
+  const currentValue = value ?? internalValue;
 
   const setValue = (next: string) => {
     if (value === undefined) {
-      setInternalValue(next)
+      setInternalValue(next);
     }
-    onValueChange?.(next)
-  }
+    onValueChange?.(next);
+  };
 
   return (
     <div {...props} className={className}>
@@ -47,7 +33,7 @@ export function Tabs({
         {children}
       </TabsContext.Provider>
     </div>
-  )
+  );
 }
 
-Tabs.displayName = 'Tabs'
+Tabs.displayName = "Tabs";
