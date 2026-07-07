@@ -8,7 +8,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import type { HTMLAttributes, ReactNode } from "react";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { X } from "@borderline/icons";
 
 const ModalTitleIdContext = createContext<string | undefined>(undefined);

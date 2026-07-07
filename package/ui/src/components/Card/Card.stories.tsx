@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Card } from './Card'
-import { StatCard } from './StatCard'
-import { Badge } from './Badge'
-import { Button } from './Button'
+import { StatCard } from '../StatCard/StatCard'
+import { Badge } from '../Badge/Badge'
+import { Button } from '../Button/Button'
 import { Wallet, BarChart, Payment, CreditCard, Send, Move } from '@borderline/icons'
 
 const meta = {

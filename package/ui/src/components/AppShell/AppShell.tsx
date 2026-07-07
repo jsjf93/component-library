@@ -1,23 +1,23 @@
-import { cloneElement, useState } from 'react'
-import type { ReactElement, ReactNode } from 'react'
-import { Menu } from '@borderline/icons'
-import type { SidebarProps } from './sidebar/Sidebar'
+import { cloneElement, useState } from "react";
+import type { ReactElement, ReactNode } from "react";
+import { Menu } from "@borderline/icons";
+import type { SidebarProps } from "../Sidebar/Sidebar";
 
 export type AppShellProps = {
   /** A `<Sidebar>` element. It is cloned with `open`/`onClose` to drive the mobile drawer. */
-  sidebar: ReactElement<SidebarProps>
-  children: ReactNode
-  className?: string
-}
+  sidebar: ReactElement<SidebarProps>;
+  children: ReactNode;
+  className?: string;
+};
 
 export function AppShell({ sidebar, children, className }: AppShellProps) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div
-      className={['flex h-screen overflow-hidden bg-background', className]
+      className={["flex h-screen overflow-hidden bg-background", className]
         .filter(Boolean)
-        .join(' ')}
+        .join(" ")}
     >
       {cloneElement(sidebar, { open, onClose: () => setOpen(false) })}
 
@@ -36,7 +36,7 @@ export function AppShell({ sidebar, children, className }: AppShellProps) {
         <main className="flex-1 overflow-y-auto">{children}</main>
       </div>
     </div>
-  )
+  );
 }
 
-AppShell.displayName = 'AppShell'
+AppShell.displayName = "AppShell";

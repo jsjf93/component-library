@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Leaf, Home, Wallet, Send, BarChart, Settings } from '@borderline/icons'
 import { AppShell } from './AppShell'
-import { Sidebar } from './sidebar/Sidebar'
-import { SidebarHeader } from './sidebar/SidebarHeader'
-import { SidebarNav } from './sidebar/SidebarNav'
-import { SidebarItem } from './sidebar/SidebarItem'
-import { SidebarFooter } from './sidebar/SidebarFooter'
+import { Sidebar } from '../sidebar/Sidebar'
+import { SidebarHeader } from '../sidebar/SidebarHeader'
+import { SidebarNav } from '../sidebar/SidebarNav'
+import { SidebarItem } from '../sidebar/SidebarItem'
+import { SidebarFooter } from '../sidebar/SidebarFooter'
 
 const meta: Meta<typeof AppShell> = {
   title: 'Components/AppShell',

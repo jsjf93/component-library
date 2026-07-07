@@ -45,7 +45,7 @@ pnpm --filter demo <script>
 - **Styles**: `src/index.css` — single CSS file, imported by `index.ts`. Uses Tailwind v4 (`@import "tailwindcss"`) for utilities plus hand-authored semantic class names (e.g. `.ui-button`). The build emits this as `dist/styles.css`, exposed via the `"./styles.css"` package export.
 - **Design tokens**: the `@theme` block in `index.css` is the source of truth for theming — semantic color tokens (`--color-primary`, `--color-success-foreground`, etc.) and typography scales. Components and class names reference these tokens rather than hard-coded values.
 - **Build**: `tsc -p tsconfig.build.json` emits `.d.ts` declarations to `dist/`, then `vite build` bundles to `dist/index.js` (ESM only). `react`, `react-dom`, and `react/jsx-runtime` are externalized.
-- **Components**: one file per component in `src/components/`. Each file exports the component and its props type. Co-locate a `.stories.tsx` file for Storybook alongside each component. **Exception — compound components**: multi-part components live in their own subdirectory (e.g. `components/sidebar/` with `Sidebar`, `SidebarHeader`, `SidebarNav`, `SidebarItem`, `SidebarFooter`), each re-exported from `index.ts`.
+- **Components**: each component lives in its own subdirectory under `src/components/` (e.g. `components/Button/Button.tsx`), exporting the component and its props type, with a co-located `.stories.tsx` file. Compound components with multiple parts (e.g. `components/sidebar/` with `Sidebar`, `SidebarHeader`, `SidebarNav`, `SidebarItem`, `SidebarFooter`) follow the same subdirectory pattern, one file per part. Every component/part is re-exported from `index.ts`.
 - **Recipes**: `src/recipes/` holds Storybook-only composition examples (e.g. `Dashboard.stories.tsx`) that wire several components together. These are not exported from `index.ts`.
 - **Styling pattern**: components apply a stable semantic class (e.g. `ui-button`) defined in `index.css`, then spread `className` from props so consumers can extend via Tailwind utilities.
 
@@ -61,7 +61,7 @@ Minimal app for manual integration testing. Add components from `@borderline/ui`
 
 ### Adding a new component
 
-1. Create `package/ui/src/components/MyComponent.tsx` — export the component and its props type.
+1. Create `package/ui/src/components/MyComponent/MyComponent.tsx` — export the component and its props type.
 2. Add a `.stories.tsx` file alongside it.
 3. Re-export from `package/ui/src/index.ts`.
 4. Add any component-scoped CSS classes to `package/ui/src/index.css`.

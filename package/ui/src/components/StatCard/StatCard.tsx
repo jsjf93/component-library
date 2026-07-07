@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import type { ReactNode } from 'react'
-import { Card } from './Card'
+import { Card } from '../Card/Card'
 import { TrendUp, TrendDown } from '@borderline/icons'
 
 export type StatCardTrend = {
