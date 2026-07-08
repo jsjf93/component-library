@@ -94,3 +94,12 @@ export type {
   ResolvedTheme,
   ThemeContextValue,
 } from "./theme/theme-context";
+
+export { Tabs } from "./components/Tabs/Tabs";
+export type { TabsProps } from "./components/Tabs/Tabs";
+
+export { TabList } from "./components/Tabs/TabList";
+export type { TabListProps } from "./components/Tabs/TabList";
+
+export { Tab } from "./components/Tabs/Tab";
+export type { TabProps } from "./components/Tabs/Tab";
