@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import type { HTMLAttributes, ReactNode } from "react";
 import { TabsContext } from "./TabsContext";
 
@@ -19,6 +19,7 @@ export function Tabs({
 }: TabsProps) {
   const [internalValue, setInternalValue] = useState(defaultValue ?? "");
   const currentValue = value ?? internalValue;
+  const baseId = useId();
 
   const setValue = (next: string) => {
     if (value === undefined) {
@@ -29,7 +30,7 @@ export function Tabs({
 
   return (
     <div {...props} className={className}>
-      <TabsContext.Provider value={{ value: currentValue, setValue }}>
+      <TabsContext.Provider value={{ value: currentValue, setValue, baseId }}>
         {children}
       </TabsContext.Provider>
     </div>

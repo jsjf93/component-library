@@ -19,7 +19,8 @@ const TRACK_ON  = 'bg-primary'
 const TRACK_OFF = 'bg-muted'
 
 const THUMB_BASE =
-  'pointer-events-none inline-block size-5 rounded-full bg-white shadow-sm ' +
+  'pointer-events-none inline-block size-5 rounded-full bg-card shadow-sm ' +
+  'ring-1 ring-inset ring-black/10 dark:ring-white/10 ' +
   'transition-transform duration-200 ease'
 
 const THUMB_ON  = 'translate-x-5'

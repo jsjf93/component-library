@@ -103,3 +103,6 @@ export type { TabListProps } from "./components/Tabs/TabList";
 
 export { Tab } from "./components/Tabs/Tab";
 export type { TabProps } from "./components/Tabs/Tab";
+
+export { TabPanel } from "./components/Tabs/TabPanel";
+export type { TabPanelProps } from "./components/Tabs/TabPanel";

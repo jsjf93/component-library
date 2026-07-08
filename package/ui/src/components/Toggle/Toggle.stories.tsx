@@ -31,15 +31,15 @@ export const Showcase: Story = {
         <div className="flex flex-col gap-4 divide-y divide-border">
           <div className="flex items-center justify-between py-1">
             <span className="text-sm font-medium text-foreground">Transaction alerts</span>
-            <Toggle defaultChecked />
+            <Toggle aria-label="Transaction alerts" defaultChecked />
           </div>
           <div className="flex items-center justify-between py-1">
             <span className="text-sm font-medium text-foreground">Monthly statements</span>
-            <Toggle defaultChecked />
+            <Toggle aria-label="Monthly statements" defaultChecked />
           </div>
           <div className="flex items-center justify-between py-1">
             <span className="text-sm font-medium text-foreground">Promotional emails</span>
-            <Toggle />
+            <Toggle aria-label="Promotional emails" />
           </div>
         </div>
       </Section>

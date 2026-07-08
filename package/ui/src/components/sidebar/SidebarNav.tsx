@@ -8,6 +8,7 @@ export type SidebarNavProps = HTMLAttributes<HTMLElement> & {
 export const SidebarNav = forwardRef<HTMLElement, SidebarNavProps>(
   ({ className, label, children, ...props }, ref) => (
     <nav
+      aria-label={label}
       {...props}
       ref={ref}
       className={['flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto p-3', className]

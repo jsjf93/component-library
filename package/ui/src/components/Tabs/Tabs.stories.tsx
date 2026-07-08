@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Tabs } from './Tabs'
 import { TabList } from './TabList'
 import { Tab } from './Tab'
+import { TabPanel } from './TabPanel'
 
 const meta = {
   title: 'Components/Tabs',
@@ -93,6 +94,27 @@ export const Disabled: Story = {
         <Tab value="outgoing" disabled>Outgoing</Tab>
         <Tab value="pending">Pending</Tab>
       </TabList>
+    </Tabs>
+  ),
+}
+
+export const WithPanels: Story = {
+  render: () => (
+    <Tabs defaultValue="all">
+      <TabList>
+        <Tab value="all">All</Tab>
+        <Tab value="incoming">Incoming</Tab>
+        <Tab value="outgoing">Outgoing</Tab>
+      </TabList>
+      <TabPanel value="all" className="pt-4 text-sm text-foreground">
+        All transactions.
+      </TabPanel>
+      <TabPanel value="incoming" className="pt-4 text-sm text-foreground">
+        Incoming transactions only.
+      </TabPanel>
+      <TabPanel value="outgoing" className="pt-4 text-sm text-foreground">
+        Outgoing transactions only.
+      </TabPanel>
     </Tabs>
   ),
 }

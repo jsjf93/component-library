@@ -34,6 +34,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ) => {
     const generatedId = useId()
     const checkboxId = id ?? generatedId
+    const errorId = `${checkboxId}-error`
 
     return (
       <div className={className}>
@@ -50,6 +51,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             id={checkboxId}
             type="checkbox"
             className="sr-only peer"
+            aria-invalid={!!error}
+            aria-describedby={error ? errorId : undefined}
           />
           <div className={BOX} aria-hidden>
             <svg
@@ -70,7 +73,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           )}
         </label>
         {error && (
-          <p className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p id={errorId} className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
             {error}
           </p>
         )}

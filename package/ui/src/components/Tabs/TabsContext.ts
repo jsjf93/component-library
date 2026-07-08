@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 export type TabsContextValue = {
   value: string;
   setValue: (value: string) => void;
+  baseId: string;
 };
 
 export const TabsContext = createContext<TabsContextValue | undefined>(

@@ -36,6 +36,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   ) => {
     const generatedId = useId()
     const selectId = id ?? generatedId
+    const descriptionId = `${selectId}-description`
 
     const classes = [
       BASE,
@@ -59,7 +60,14 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </label>
         )}
         <div className="relative">
-          <select {...props} ref={ref} id={selectId} className={classes}>
+          <select
+            {...props}
+            ref={ref}
+            id={selectId}
+            className={classes}
+            aria-invalid={!!error}
+            aria-describedby={error || helperText ? descriptionId : undefined}
+          >
             {placeholder && (
               <option value="" disabled>
                 {placeholder}
@@ -72,11 +80,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </div>
         </div>
         {error ? (
-          <p className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p id={descriptionId} className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
             {error}
           </p>
         ) : helperText ? (
-          <p className="mt-1 text-xs text-muted-foreground">{helperText}</p>
+          <p id={descriptionId} className="mt-1 text-xs text-muted-foreground">{helperText}</p>
         ) : null}
       </div>
     )

@@ -49,6 +49,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const generatedId = useId()
     const inputId = id ?? generatedId
+    const descriptionId = `${inputId}-description`
     const [showPassword, setShowPassword] = useState(false)
 
     const resolvedVariant: InputVariant =
@@ -86,6 +87,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             type={resolvedType}
             className={inputClasses}
+            aria-invalid={!!error}
+            aria-describedby={error || helperText ? descriptionId : undefined}
           />
           {resolvedVariant === 'password' && (
             <button
@@ -99,11 +102,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error ? (
-          <p className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p id={descriptionId} className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
             {error}
           </p>
         ) : helperText ? (
-          <p className="mt-1 text-xs text-muted-foreground">{helperText}</p>
+          <p id={descriptionId} className="mt-1 text-xs text-muted-foreground">{helperText}</p>
         ) : null}
       </div>
     )

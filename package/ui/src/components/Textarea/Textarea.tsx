@@ -35,6 +35,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     const generatedId = useId()
     const textareaId = id ?? generatedId
+    const descriptionId = `${textareaId}-description`
     const [charCount, setCharCount] = useState(
       typeof defaultValue === 'string' ? defaultValue.length : 0,
     )
@@ -73,14 +74,16 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           defaultValue={defaultValue}
           onChange={handleChange}
           className={classes}
+          aria-invalid={!!error}
+          aria-describedby={error || helperText ? descriptionId : undefined}
         />
         <div className="mt-1 flex items-start justify-between gap-2">
           {error ? (
-            <p className="text-xs text-destructive animate-fade-in-up" role="alert">
+            <p id={descriptionId} className="text-xs text-destructive animate-fade-in-up" role="alert">
               {error}
             </p>
           ) : helperText ? (
-            <p className="text-xs text-muted-foreground">{helperText}</p>
+            <p id={descriptionId} className="text-xs text-muted-foreground">{helperText}</p>
           ) : (
             <span />
           )}

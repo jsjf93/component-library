@@ -20,7 +20,7 @@ const INACTIVE = "text-foreground/70 hover:text-foreground";
 
 export const Tab = forwardRef<HTMLButtonElement, TabProps>(
   ({ className, value, disabled, children, onClick, ...props }, ref) => {
-    const { value: activeValue, setValue } = useTabsContext();
+    const { value: activeValue, setValue, baseId } = useTabsContext();
     const isActive = activeValue === value;
 
     return (
@@ -29,6 +29,8 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
         ref={ref}
         type="button"
         role="tab"
+        id={`${baseId}-tab-${value}`}
+        aria-controls={`${baseId}-panel-${value}`}
         data-value={value}
         aria-selected={isActive}
         aria-disabled={disabled || undefined}

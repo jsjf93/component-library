@@ -90,6 +90,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         className={classes}
         disabled={isDisabled}
+        aria-busy={loading}
         style={pulse ? { '--button-pulse-color': PULSE_COLORS[variant] } as React.CSSProperties : undefined}
       >
         {loading && <Spinner />}
