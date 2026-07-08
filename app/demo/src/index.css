@@ -1,8 +1,14 @@
-@import "tailwindcss";
 /* Design tokens (so demo-authored utilities like bg-primary resolve) … */
 @import "@borderline/ui/theme.css";
-/* … and the compiled component classes (.ui-button, .ui-card, etc.). */
+/* … and the compiled component classes (.ui-button, .ui-card, etc.). Imported
+   before tailwindcss so this app's own utilities (e.g. responsive variants
+   like sm:flex-row) sort after — and win over — any unprefixed utility
+   classes the library's precompiled CSS also happens to use internally
+   (e.g. Select/Input's flex-col wrapper), which would otherwise collide at
+   equal specificity and always lose to the later rule regardless of
+   viewport. */
 @import "@borderline/ui/styles.css";
+@import "tailwindcss";
 
 :root {
   color: var(--color-foreground);
