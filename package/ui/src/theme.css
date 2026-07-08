@@ -90,7 +90,7 @@
 
   /* --- Core semantic colors --- */
   --color-primary: hsl(152 50% 45%);
-  --color-primary-foreground: hsl(152 45% 8%);
+  --color-primary-foreground: hsl(0 0% 100%);
 
   --color-secondary: hsl(152 22% 16%);
   --color-secondary-foreground: hsl(150 40% 82%);
