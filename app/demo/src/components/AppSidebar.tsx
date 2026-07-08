@@ -3,6 +3,7 @@ import {
   SidebarHeader,
   SidebarNav,
   SidebarFooter,
+  ThemeToggle,
 } from '@borderline/ui'
 import { Leaf, Home, BarChart, Settings, Wallet } from '@borderline/icons'
 import { NavItem } from './NavItem'
@@ -29,9 +30,12 @@ export function AppSidebar({ open, onClose }: AppSidebarProps) {
         </NavItem>
       </SidebarNav>
       <SidebarFooter>
-        <div className="flex items-center gap-3 px-3 py-2 text-xs text-muted-foreground">
-          <Wallet className="size-4 shrink-0" />
-          <span>Live data via Kraken</span>
+        <div className="flex items-center justify-between gap-3 px-3 py-2 text-xs text-muted-foreground">
+          <div className="flex items-center gap-3">
+            <Wallet className="size-4 shrink-0" />
+            <span>Live data via Kraken</span>
+          </div>
+          <ThemeToggle />
         </div>
       </SidebarFooter>
     </Sidebar>

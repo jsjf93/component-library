@@ -78,3 +78,56 @@
   --shadow-lg: 0 10px 15px -3px hsl(220 13% 11% / 0.08), 0 4px 6px -4px hsl(220 13% 11% / 0.05);
   --shadow-xl: 0 20px 25px -5px hsl(220 13% 11% / 0.08), 0 8px 10px -6px hsl(220 13% 11% / 0.04);
 }
+
+/*
+ * Dark theme — overrides the semantic color tokens defined in @theme above.
+ * Components reference these tokens (bg-background, text-foreground, …), so
+ * flipping the values here re-themes the whole library via the CSS cascade.
+ * Non-color tokens (typography, radius, spacing) are theme-agnostic and unchanged.
+ */
+.dark {
+  color-scheme: dark;
+
+  /* --- Core semantic colors --- */
+  --color-primary: hsl(152 50% 45%);
+  --color-primary-foreground: hsl(152 45% 8%);
+
+  --color-secondary: hsl(152 22% 16%);
+  --color-secondary-foreground: hsl(150 40% 82%);
+
+  --color-accent: hsl(152 20% 18%);
+  --color-accent-foreground: hsl(150 40% 85%);
+
+  --color-muted: hsl(220 14% 16%);
+  --color-muted-foreground: hsl(220 10% 62%);
+
+  --color-background: hsl(220 20% 7%);
+  --color-foreground: hsl(210 17% 92%);
+
+  --color-card: hsl(220 17% 11%);
+  --color-card-foreground: hsl(210 17% 92%);
+
+  --color-destructive: hsl(0 72% 55%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --color-border: hsl(220 13% 20%);
+
+  /* --- Status colors (dark translucent surfaces, brighter foregrounds) --- */
+  --color-success: hsl(142 40% 14%);
+  --color-success-foreground: hsl(142 60% 62%);
+
+  --color-warning: hsl(38 55% 14%);
+  --color-warning-foreground: hsl(43 90% 62%);
+
+  --color-danger: hsl(0 45% 15%);
+  --color-danger-foreground: hsl(0 80% 68%);
+
+  --color-info: hsl(214 55% 16%);
+  --color-info-foreground: hsl(214 85% 70%);
+
+  /* --- Shadows (deeper/darker so elevation reads on dark surfaces) --- */
+  --shadow-sm: 0 1px 2px 0 hsl(220 40% 2% / 0.4);
+  --shadow-md: 0 4px 6px -1px hsl(220 40% 2% / 0.5), 0 2px 4px -2px hsl(220 40% 2% / 0.4);
+  --shadow-lg: 0 10px 15px -3px hsl(220 40% 2% / 0.55), 0 4px 6px -4px hsl(220 40% 2% / 0.4);
+  --shadow-xl: 0 20px 25px -5px hsl(220 40% 2% / 0.6), 0 8px 10px -6px hsl(220 40% 2% / 0.45);
+}

@@ -82,3 +82,15 @@ export type {
   ModalFooterProps,
   ModalSize,
 } from "./components/Modal/Modal";
+
+export { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
+export type { ThemeToggleProps } from "./components/ThemeToggle/ThemeToggle";
+
+export { ThemeProvider } from "./theme/ThemeProvider";
+export type { ThemeProviderProps } from "./theme/ThemeProvider";
+export { useTheme } from "./theme/theme-context";
+export type {
+  Theme,
+  ResolvedTheme,
+  ThemeContextValue,
+} from "./theme/theme-context";
