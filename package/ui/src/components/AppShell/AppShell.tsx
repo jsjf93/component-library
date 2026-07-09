@@ -22,7 +22,10 @@ export function AppShell({ sidebar, children, className }: AppShellProps) {
       {cloneElement(sidebar, { open, onClose: () => setOpen(false) })}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 md:hidden">
+        {/* `!` guards against a consumer's own Tailwind build regenerating an
+        unscoped `flex` that lands after this file's `md:hidden` in the
+        shared utilities layer: https://github.com/tailwindlabs/tailwindcss/discussions/12714 */}
+        <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 md:hidden!">
           <button
             type="button"
             onClick={() => setOpen(true)}
