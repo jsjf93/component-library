@@ -32,9 +32,9 @@ export const Showcase: Story = {
           label={
             <>
               I agree to the{' '}
-              <a href="#" className="text-primary underline underline-offset-2">Terms of Service</a>
+              <a href="#" className="text-accent-foreground underline underline-offset-2">Terms of Service</a>
               {' '}and{' '}
-              <a href="#" className="text-primary underline underline-offset-2">Privacy Policy</a>
+              <a href="#" className="text-accent-foreground underline underline-offset-2">Privacy Policy</a>
             </>
           }
         />
@@ -78,9 +78,9 @@ export const WithLinkInLabel: Story = {
     label: (
       <>
         I agree to the{' '}
-        <a href="#" className="text-primary underline underline-offset-2">Terms of Service</a>
+        <a href="#" className="text-accent-foreground underline underline-offset-2">Terms of Service</a>
         {' '}and{' '}
-        <a href="#" className="text-primary underline underline-offset-2">Privacy Policy</a>
+        <a href="#" className="text-accent-foreground underline underline-offset-2">Privacy Policy</a>
       </>
     ),
   },

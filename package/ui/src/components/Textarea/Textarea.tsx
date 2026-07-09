@@ -60,7 +60,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             htmlFor={textareaId}
             className={[
               'block text-sm font-medium mb-1',
-              error ? 'text-destructive' : 'text-foreground',
+              error ? 'text-danger-foreground' : 'text-foreground',
             ].join(' ')}
           >
             {label}
@@ -79,7 +79,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         />
         <div className="mt-1 flex items-start justify-between gap-2">
           {error ? (
-            <p id={descriptionId} className="text-xs text-destructive animate-fade-in-up" role="alert">
+            <p id={descriptionId} className="text-xs text-danger-foreground animate-fade-in-up" role="alert">
               {error}
             </p>
           ) : helperText ? (

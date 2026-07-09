@@ -34,7 +34,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
     'bg-transparent text-foreground border-border hover:bg-accent hover:text-accent-foreground',
   ghost:
     'bg-transparent text-foreground border-transparent hover:bg-accent hover:text-accent-foreground',
-  link: 'bg-transparent text-primary border-transparent underline-offset-4 hover:underline',
+  link: 'bg-transparent text-accent-foreground border-transparent underline-offset-4 hover:underline',
   destructive:
     'bg-destructive text-destructive-foreground border-transparent hover:bg-destructive/90 hover:shadow-sm',
 }

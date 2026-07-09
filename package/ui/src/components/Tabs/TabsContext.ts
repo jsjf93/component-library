@@ -4,6 +4,8 @@ export type TabsContextValue = {
   value: string;
   setValue: (value: string) => void;
   baseId: string;
+  panelValues: Set<string>;
+  registerPanel: (value: string) => () => void;
 };
 
 export const TabsContext = createContext<TabsContextValue | undefined>(

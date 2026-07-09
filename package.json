@@ -11,6 +11,7 @@
     "dev:demo": "pnpm --filter demo dev",
     "storybook": "pnpm --filter @borderline/ui storybook",
     "build-storybook": "pnpm --filter @borderline/ui build-storybook",
+    "test-storybook": "pnpm --filter @borderline/ui test-storybook",
     "lint": "pnpm -r lint",
     "release": "pnpm --filter \"@borderline/*\" publish --no-git-checks"
   }

@@ -1,24 +1,23 @@
-import { forwardRef, useId } from 'react'
-import type { SelectHTMLAttributes } from 'react'
-import { ChevronDown } from '@borderline/icons'
+import { forwardRef, useId } from "react";
+import type { SelectHTMLAttributes } from "react";
+import { ChevronDown } from "@borderline/icons";
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
-  label?: string
-  helperText?: string
-  error?: string
-  placeholder?: string
-}
+  label?: string;
+  helperText?: string;
+  error?: string;
+  placeholder?: string;
+};
 
 const BASE =
-  'w-full appearance-none rounded-lg border bg-background text-sm text-foreground ' +
-  'h-10 pl-3 pr-9 ' +
-  'transition-[border-color] duration-150 ease ' +
-  'focus-visible:outline-none focus-visible:border-primary ' +
-  'disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'
+  "w-full appearance-none rounded-lg border bg-background text-sm text-foreground " +
+  "h-10 pl-3 pr-9 " +
+  "transition-[border-color] duration-150 ease " +
+  "focus-visible:outline-none focus-visible:border-primary " +
+  "disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
-const BORDER_DEFAULT = 'border-border'
-const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
-
+const BORDER_DEFAULT = "border-border";
+const BORDER_ERROR = "border-destructive focus-visible:border-destructive";
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
@@ -34,17 +33,13 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     },
     ref,
   ) => {
-    const generatedId = useId()
-    const selectId = id ?? generatedId
-    const descriptionId = `${selectId}-description`
+    const generatedId = useId();
+    const selectId = id ?? generatedId;
+    const descriptionId = `${selectId}-description`;
 
-    const classes = [
-      BASE,
-      error ? BORDER_ERROR : BORDER_DEFAULT,
-      className,
-    ]
+    const classes = [BASE, error ? BORDER_ERROR : BORDER_DEFAULT, className]
       .filter(Boolean)
-      .join(' ')
+      .join(" ");
 
     return (
       <div className="flex flex-col">
@@ -52,9 +47,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           <label
             htmlFor={selectId}
             className={[
-              'block text-sm font-medium mb-1',
-              error ? 'text-destructive' : 'text-foreground',
-            ].join(' ')}
+              "block text-sm font-medium mb-1",
+              error ? "text-danger-foreground" : "text-foreground",
+            ].join(" ")}
           >
             {label}
           </label>
@@ -80,15 +75,21 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </div>
         </div>
         {error ? (
-          <p id={descriptionId} className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p
+            id={descriptionId}
+            className="mt-1 text-xs text-danger-foreground animate-fade-in-up"
+            role="alert"
+          >
             {error}
           </p>
         ) : helperText ? (
-          <p id={descriptionId} className="mt-1 text-xs text-muted-foreground">{helperText}</p>
+          <p id={descriptionId} className="mt-1 text-xs text-muted-foreground">
+            {helperText}
+          </p>
         ) : null}
       </div>
-    )
+    );
   },
-)
+);
 
-Select.displayName = 'Select'
+Select.displayName = "Select";

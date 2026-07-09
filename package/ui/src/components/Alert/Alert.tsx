@@ -50,7 +50,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
         <span className={['mt-0.5', icon].join(' ')}>{ICONS[variant]}</span>
         <div className="flex flex-col gap-0.5 text-sm">
           <span className="font-semibold">{title}</span>
-          {children && <span className="opacity-80">{children}</span>}
+          {children && <span>{children}</span>}
         </div>
       </div>
     )

@@ -30,7 +30,7 @@ const PADDING: Record<InputVariant, string> = {
 
 const LABEL_BASE    = 'block text-sm font-medium mb-1'
 const LABEL_DEFAULT = 'text-foreground'
-const LABEL_ERROR   = 'text-destructive'
+const LABEL_ERROR   = 'text-danger-foreground'
 
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -102,7 +102,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error ? (
-          <p id={descriptionId} className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p id={descriptionId} className="mt-1 text-xs text-danger-foreground animate-fade-in-up" role="alert">
             {error}
           </p>
         ) : helperText ? (
