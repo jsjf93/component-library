@@ -13,5 +13,8 @@
     "build-storybook": "pnpm --filter @borderline/ui build-storybook",
     "lint": "pnpm -r lint",
     "release": "pnpm --filter \"@borderline/*\" publish --no-git-checks"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2"
   }
 }
