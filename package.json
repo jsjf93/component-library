@@ -12,6 +12,12 @@
     "storybook": "pnpm --filter @borderline/ui storybook",
     "build-storybook": "pnpm --filter @borderline/ui build-storybook",
     "lint": "pnpm -r lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "release": "pnpm --filter \"@borderline/*\" publish --no-git-checks"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.5",
+    "typescript": "~6.0.2"
   }
 }

@@ -2,7 +2,13 @@
   "name": "@borderline/icons",
   "version": "0.1.0",
   "description": "Hand-authored SVG icon components for React, used by @borderline/ui.",
-  "keywords": ["react", "icons", "svg", "components", "borderline"],
+  "keywords": [
+    "react",
+    "icons",
+    "svg",
+    "components",
+    "borderline"
+  ],
   "license": "MIT",
   "author": "Joshua Foster <jsjf93@hotmail.co.uk>",
   "homepage": "https://github.com/jsjf93/component-library/tree/main/package/icons#readme",
@@ -13,7 +19,9 @@
     "directory": "package/icons"
   },
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -44,6 +52,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
