@@ -28,7 +28,9 @@ describe("Alert component", () => {
     const { container } = await render(<Alert title="No description" />);
 
     // Only the title <span> should be present, not a second one for children.
-    expect(container.querySelectorAll("span.font-semibold + span")).toHaveLength(0);
+    expect(
+      container.querySelectorAll("span.font-semibold + span"),
+    ).toHaveLength(0);
   });
 
   test("defaults to the info variant", async () => {
@@ -38,7 +40,9 @@ describe("Alert component", () => {
   });
 
   test.each(VARIANTS)("applies the %s variant's styling", async (variant) => {
-    const { getByRole } = await render(<Alert variant={variant} title="Styled" />);
+    const { getByRole } = await render(
+      <Alert variant={variant} title="Styled" />,
+    );
 
     await expect.element(getByRole("alert")).toHaveClass(`bg-${variant}`);
   });
@@ -58,7 +62,9 @@ describe("Alert component", () => {
       <Alert title="Extra props" data-testid="custom-alert" />,
     );
 
-    await expect.element(getByRole("alert")).toHaveAttribute("data-testid", "custom-alert");
+    await expect
+      .element(getByRole("alert"))
+      .toHaveAttribute("data-testid", "custom-alert");
   });
 
   test("forwards the ref to the underlying div", async () => {

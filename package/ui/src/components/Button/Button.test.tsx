@@ -26,24 +26,31 @@ describe("Button component", () => {
     await expect.element(button).toHaveClass("h-10");
   });
 
-  test.each(VARIANTS)("renders correct variant styling for %s", async (variant) => {
-    const { getByRole } = await render(<Button variant={variant}>Button {variant}</Button>);
-    const button = getByRole("button", { name: `Button ${variant}` });
+  test.each(VARIANTS)(
+    "renders correct variant styling for %s",
+    async (variant) => {
+      const { getByRole } = await render(
+        <Button variant={variant}>Button {variant}</Button>,
+      );
+      const button = getByRole("button", { name: `Button ${variant}` });
 
-    const variantClassMap: Record<ButtonVariant, string> = {
-      primary: "bg-primary",
-      secondary: "bg-secondary",
-      outline: "border-border",
-      ghost: "border-transparent",
-      link: "text-primary",
-      destructive: "bg-destructive",
-    };
+      const variantClassMap: Record<ButtonVariant, string> = {
+        primary: "bg-primary",
+        secondary: "bg-secondary",
+        outline: "border-border",
+        ghost: "border-transparent",
+        link: "text-primary",
+        destructive: "bg-destructive",
+      };
 
-    await expect.element(button).toHaveClass(variantClassMap[variant]);
-  });
+      await expect.element(button).toHaveClass(variantClassMap[variant]);
+    },
+  );
 
   test.each(SIZES)("renders correct size styling for %s", async (size) => {
-    const { getByRole } = await render(<Button size={size}>Size {size}</Button>);
+    const { getByRole } = await render(
+      <Button size={size}>Size {size}</Button>,
+    );
     const button = getByRole("button", { name: `Size ${size}` });
 
     const sizeClassMap: Record<ButtonSize, string> = {
@@ -76,7 +83,9 @@ describe("Button component", () => {
 
   test("handles click events when enabled", async () => {
     const handleClick = vi.fn();
-    const { getByRole } = await render(<Button onClick={handleClick}>Click me</Button>);
+    const { getByRole } = await render(
+      <Button onClick={handleClick}>Click me</Button>,
+    );
     const button = getByRole("button", { name: "Click me" });
 
     await button.click();
@@ -130,7 +139,9 @@ describe("Button component", () => {
   });
 
   test("merges custom class names with base classes", async () => {
-    const { getByRole } = await render(<Button className="custom-class-123">Custom</Button>);
+    const { getByRole } = await render(
+      <Button className="custom-class-123">Custom</Button>,
+    );
     const button = getByRole("button", { name: "Custom" });
 
     await expect.element(button).toHaveClass("custom-class-123");
