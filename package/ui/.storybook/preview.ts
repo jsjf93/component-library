@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
-import type { Preview } from '@storybook/react-vite'
-import '../src/index.css'
+import { useEffect } from "react";
+import type { Preview } from "@storybook/react-vite";
+import "../src/index.css";
 
 const preview: Preview = {
   parameters: {
@@ -10,38 +10,38 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    layout: 'centered',
+    layout: "centered",
   },
   globalTypes: {
     theme: {
-      description: 'Global theme for components',
+      description: "Global theme for components",
       toolbar: {
-        title: 'Theme',
-        icon: 'circlehollow',
+        title: "Theme",
+        icon: "circlehollow",
         items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
+          { value: "light", title: "Light", icon: "sun" },
+          { value: "dark", title: "Dark", icon: "moon" },
         ],
         dynamicTitle: true,
       },
     },
   },
   initialGlobals: {
-    theme: 'light',
+    theme: "light",
   },
   decorators: [
     (Story, context) => {
-      const theme = context.globals.theme ?? 'light'
+      const theme = context.globals.theme ?? "light";
       useEffect(() => {
-        const root = document.documentElement
-        root.classList.toggle('dark', theme === 'dark')
-        root.style.colorScheme = theme
-        document.body.style.background = 'var(--color-background)'
-        document.body.style.color = 'var(--color-foreground)'
-      }, [theme])
-      return Story()
+        const root = document.documentElement;
+        root.classList.toggle("dark", theme === "dark");
+        root.style.colorScheme = theme;
+        document.body.style.background = "var(--color-background)";
+        document.body.style.color = "var(--color-foreground)";
+      }, [theme]);
+      return Story();
     },
   ],
-}
+};
 
-export default preview
+export default preview;

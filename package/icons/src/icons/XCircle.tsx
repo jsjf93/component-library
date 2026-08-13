@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function XCircle({ className = 'size-4' }: IconProps) {
+export function XCircle({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function XCircle({ className = 'size-4' }: IconProps) {
       <line x1="15" y1="9" x2="9" y2="15" />
       <line x1="9" y1="9" x2="15" y2="15" />
     </svg>
-  )
+  );
 }

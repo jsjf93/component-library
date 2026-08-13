@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Send({ className = 'size-4' }: IconProps) {
+export function Send({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -15,5 +15,5 @@ export function Send({ className = 'size-4' }: IconProps) {
       <line x1="22" y1="2" x2="11" y2="13" />
       <polygon points="22 2 15 22 11 13 2 9 22 2" />
     </svg>
-  )
+  );
 }

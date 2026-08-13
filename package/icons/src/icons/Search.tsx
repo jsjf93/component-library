@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Search({ className = 'size-4' }: IconProps) {
+export function Search({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -15,5 +15,5 @@ export function Search({ className = 'size-4' }: IconProps) {
       <circle cx="11" cy="11" r="8" />
       <path d="m21 21-4.35-4.35" />
     </svg>
-  )
+  );
 }

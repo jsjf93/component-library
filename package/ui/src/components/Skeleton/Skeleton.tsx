@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
+import { forwardRef } from "react";
+import type { HTMLAttributes } from "react";
 
-export type SkeletonProps = HTMLAttributes<HTMLDivElement>
+export type SkeletonProps = HTMLAttributes<HTMLDivElement>;
 
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   ({ className, ...props }, ref) => {
@@ -10,12 +10,12 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
         {...props}
         ref={ref}
         aria-hidden
-        className={['animate-skeleton-pulse rounded-md bg-muted', className]
+        className={["animate-skeleton-pulse rounded-md bg-muted", className]
           .filter(Boolean)
-          .join(' ')}
+          .join(" ")}
       />
-    )
+    );
   },
-)
+);
 
-Skeleton.displayName = 'Skeleton'
+Skeleton.displayName = "Skeleton";

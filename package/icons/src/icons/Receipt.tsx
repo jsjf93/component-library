@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Receipt({ className = 'size-4 shrink-0' }: IconProps) {
+export function Receipt({ className = "size-4 shrink-0" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function Receipt({ className = 'size-4 shrink-0' }: IconProps) {
       <path d="M9 8h6" />
       <path d="M9 12h6" />
     </svg>
-  )
+  );
 }

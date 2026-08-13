@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function CheckCircle({ className = 'size-4' }: IconProps) {
+export function CheckCircle({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -15,5 +15,5 @@ export function CheckCircle({ className = 'size-4' }: IconProps) {
       <circle cx="12" cy="12" r="10" />
       <polyline points="9 12 11 14 15 10" />
     </svg>
-  )
+  );
 }

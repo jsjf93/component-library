@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function AlertCircle({ className = 'size-4' }: IconProps) {
+export function AlertCircle({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function AlertCircle({ className = 'size-4' }: IconProps) {
       <line x1="12" y1="8" x2="12" y2="12" />
       <line x1="12" y1="16" x2="12.01" y2="16" />
     </svg>
-  )
+  );
 }

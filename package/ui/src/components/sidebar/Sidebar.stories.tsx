@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Leaf,
   Home,
@@ -9,29 +9,33 @@ import {
   CreditCard,
   Shield,
   Settings,
-} from '@borderline/icons'
-import { Sidebar } from './Sidebar'
-import { SidebarHeader } from './SidebarHeader'
-import { SidebarNav } from './SidebarNav'
-import { SidebarItem } from './SidebarItem'
-import { SidebarFooter } from './SidebarFooter'
+} from "@borderline/icons";
+import { Sidebar } from "./Sidebar";
+import { SidebarHeader } from "./SidebarHeader";
+import { SidebarNav } from "./SidebarNav";
+import { SidebarItem } from "./SidebarItem";
+import { SidebarFooter } from "./SidebarFooter";
 
 const meta = {
-  title: 'Components/Sidebar/Sidebar',
+  title: "Components/Sidebar/Sidebar",
   component: Sidebar,
-  parameters: { layout: 'fullscreen' },
-} satisfies Meta<typeof Sidebar>
+  parameters: { layout: "fullscreen" },
+} satisfies Meta<typeof Sidebar>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
     <div className="h-screen">
       <Sidebar>
-        <SidebarHeader icon={<Leaf className="size-5" />}>Verdant</SidebarHeader>
+        <SidebarHeader icon={<Leaf className="size-5" />}>
+          Verdant
+        </SidebarHeader>
         <SidebarNav>
-          <SidebarItem active icon={<Home />}>Dashboard</SidebarItem>
+          <SidebarItem active icon={<Home />}>
+            Dashboard
+          </SidebarItem>
           <SidebarItem icon={<Wallet />}>Accounts</SidebarItem>
           <SidebarItem icon={<Send />}>Transfers</SidebarItem>
           <SidebarItem icon={<Receipt />}>Transactions</SidebarItem>
@@ -45,4 +49,4 @@ export const Default: Story = {
       </Sidebar>
     </div>
   ),
-}
+};

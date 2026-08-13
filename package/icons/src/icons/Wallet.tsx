@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Wallet({ className = 'size-4' }: IconProps) {
+export function Wallet({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function Wallet({ className = 'size-4' }: IconProps) {
       <path d="M16 12h.01" strokeWidth="2.5" />
       <path d="M2 10h20" />
     </svg>
-  )
+  );
 }

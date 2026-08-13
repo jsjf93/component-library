@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Eye({ className = 'size-4' }: IconProps) {
+export function Eye({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -15,5 +15,5 @@ export function Eye({ className = 'size-4' }: IconProps) {
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
       <circle cx="12" cy="12" r="3" />
     </svg>
-  )
+  );
 }

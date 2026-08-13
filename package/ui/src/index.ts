@@ -105,9 +105,9 @@ export { Tab } from "./components/Tabs/Tab";
 export type { TabProps } from "./components/Tabs/Tab";
 
 export { Toaster } from "./components/Toast/Toaster";
-export type {
-  ToasterProps,
-  ToasterPosition,
-} from "./components/Toast/Toaster";
+export type { ToasterProps, ToasterPosition } from "./components/Toast/Toaster";
 export { toast } from "./components/Toast/toast-store";
-export type { ToastVariant, ToastOptions } from "./components/Toast/toast-store";
+export type {
+  ToastVariant,
+  ToastOptions,
+} from "./components/Toast/toast-store";

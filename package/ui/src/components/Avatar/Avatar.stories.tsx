@@ -1,30 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Avatar } from './Avatar'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Avatar } from "./Avatar";
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Avatar',
+  title: "Components/Avatar",
   component: Avatar,
-  parameters: { layout: 'centered' },
-}
+  parameters: { layout: "centered" },
+};
 
-export default meta
-type Story = StoryObj<typeof Avatar>
+export default meta;
+type Story = StoryObj<typeof Avatar>;
 
 export const WithInitials: Story = {
-  args: { initials: 'JD', size: 'md' },
-}
+  args: { initials: "JD", size: "md" },
+};
 
 export const WithImage: Story = {
   args: {
-    src: 'https://i.pravatar.cc/150?img=3',
-    alt: 'Jane Doe',
-    size: 'md',
+    src: "https://i.pravatar.cc/150?img=3",
+    alt: "Jane Doe",
+    size: "md",
   },
-}
+};
 
 export const FallbackIcon: Story = {
-  args: { size: 'md' },
-}
+  args: { size: "md" },
+};
 
 export const AllSizes: Story = {
   render: () => (
@@ -43,7 +43,7 @@ export const AllSizes: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const FallbackChain: Story = {
   render: () => (
@@ -62,4 +62,4 @@ export const FallbackChain: Story = {
       </div>
     </div>
   ),
-}
+};

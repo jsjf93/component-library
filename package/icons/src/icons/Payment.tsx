@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function Payment({ className = 'size-4' }: IconProps) {
+export function Payment({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function Payment({ className = 'size-4' }: IconProps) {
       <line x1="12" y1="9" x2="12" y2="15" />
       <line x1="9" y1="12" x2="15" y2="12" />
     </svg>
-  )
+  );
 }

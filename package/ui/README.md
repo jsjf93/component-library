@@ -18,16 +18,16 @@ Import the stylesheet once at the root of your app (e.g. in your entry file or r
 
 ```tsx
 // main.tsx / App entry
-import '@borderline/ui/styles.css'
+import "@borderline/ui/styles.css";
 
-import { Button, Card, StatCard } from '@borderline/ui'
+import { Button, Card, StatCard } from "@borderline/ui";
 
 export function Example() {
   return (
     <Card>
       <Button>Click me</Button>
     </Card>
-  )
+  );
 }
 ```
 
@@ -38,7 +38,7 @@ export function Example() {
 If you want to reference or override the design tokens (CSS custom properties such as `--color-primary`) without pulling in the full stylesheet, import the tokens on their own:
 
 ```css
-@import '@borderline/ui/theme.css';
+@import "@borderline/ui/theme.css";
 ```
 
 ## Icons

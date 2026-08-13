@@ -1,37 +1,36 @@
-import { forwardRef, useId, useState } from 'react'
-import type { InputHTMLAttributes } from 'react'
-import { Search, Eye, EyeOff } from '@borderline/icons'
+import { forwardRef, useId, useState } from "react";
+import type { InputHTMLAttributes } from "react";
+import { Search, Eye, EyeOff } from "@borderline/icons";
 
-export type InputVariant = 'default' | 'search' | 'password'
+export type InputVariant = "default" | "search" | "password";
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
-  label?: string
-  helperText?: string
-  error?: string
-  variant?: InputVariant
-}
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
+  label?: string;
+  helperText?: string;
+  error?: string;
+  variant?: InputVariant;
+};
 
 const BASE =
-  'w-full rounded-lg border bg-background text-sm text-foreground placeholder:text-muted-foreground ' +
-  'transition-[border-color] duration-150 ease ' +
-  'focus-visible:outline-none focus-visible:border-primary ' +
-  'disabled:opacity-50 disabled:cursor-not-allowed ' +
-  'read-only:bg-muted read-only:text-muted-foreground read-only:cursor-default ' +
-  'read-only:focus-visible:border-border'
+  "w-full rounded-lg border bg-background text-sm text-foreground placeholder:text-muted-foreground " +
+  "transition-[border-color] duration-150 ease " +
+  "focus-visible:outline-none focus-visible:border-primary " +
+  "disabled:opacity-50 disabled:cursor-not-allowed " +
+  "read-only:bg-muted read-only:text-muted-foreground read-only:cursor-default " +
+  "read-only:focus-visible:border-border";
 
-const BORDER_DEFAULT = 'border-border'
-const BORDER_ERROR   = 'border-destructive focus-visible:border-destructive'
+const BORDER_DEFAULT = "border-border";
+const BORDER_ERROR = "border-destructive focus-visible:border-destructive";
 
 const PADDING: Record<InputVariant, string> = {
-  default:  'h-10 px-3 py-2',
-  search:   'h-10 pl-9 pr-3 py-2',
-  password: 'h-10 px-3 pr-10 py-2',
-}
+  default: "h-10 px-3 py-2",
+  search: "h-10 pl-9 pr-3 py-2",
+  password: "h-10 px-3 pr-10 py-2",
+};
 
-const LABEL_BASE    = 'block text-sm font-medium mb-1'
-const LABEL_DEFAULT = 'text-foreground'
-const LABEL_ERROR   = 'text-destructive'
-
+const LABEL_BASE = "block text-sm font-medium mb-1";
+const LABEL_DEFAULT = "text-foreground";
+const LABEL_ERROR = "text-destructive";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -40,24 +39,26 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       label,
       helperText,
       error,
-      variant = 'default',
+      variant = "default",
       type,
       id,
       ...props
     },
     ref,
   ) => {
-    const generatedId = useId()
-    const inputId = id ?? generatedId
-    const [showPassword, setShowPassword] = useState(false)
+    const generatedId = useId();
+    const inputId = id ?? generatedId;
+    const [showPassword, setShowPassword] = useState(false);
 
     const resolvedVariant: InputVariant =
-      type === 'password' ? 'password' : variant
+      type === "password" ? "password" : variant;
 
     const resolvedType =
-      resolvedVariant === 'password'
-        ? showPassword ? 'text' : 'password'
-        : type
+      resolvedVariant === "password"
+        ? showPassword
+          ? "text"
+          : "password"
+        : type;
 
     const inputClasses = [
       BASE,
@@ -66,20 +67,24 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       className,
     ]
       .filter(Boolean)
-      .join(' ')
+      .join(" ");
 
     return (
       <div className="flex flex-col">
         {label && (
           <label
             htmlFor={inputId}
-            className={[LABEL_BASE, error ? LABEL_ERROR : LABEL_DEFAULT].join(' ')}
+            className={[LABEL_BASE, error ? LABEL_ERROR : LABEL_DEFAULT].join(
+              " ",
+            )}
           >
             {label}
           </label>
         )}
         <div className="relative">
-          {resolvedVariant === 'search' && <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />}
+          {resolvedVariant === "search" && (
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />
+          )}
           <input
             {...props}
             ref={ref}
@@ -87,11 +92,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             type={resolvedType}
             className={inputClasses}
           />
-          {resolvedVariant === 'password' && (
+          {resolvedVariant === "password" && (
             <button
               type="button"
-              onClick={() => setShowPassword(v => !v)}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              onClick={() => setShowPassword((v) => !v)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
               className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
             >
               {showPassword ? <Eye /> : <EyeOff />}
@@ -99,15 +104,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error ? (
-          <p className="mt-1 text-xs text-destructive animate-fade-in-up" role="alert">
+          <p
+            className="mt-1 text-xs text-destructive animate-fade-in-up"
+            role="alert"
+          >
             {error}
           </p>
         ) : helperText ? (
           <p className="mt-1 text-xs text-muted-foreground">{helperText}</p>
         ) : null}
       </div>
-    )
+    );
   },
-)
+);
 
-Input.displayName = 'Input'
+Input.displayName = "Input";

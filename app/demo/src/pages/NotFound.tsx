@@ -1,6 +1,6 @@
-import { Alert } from '@borderline/ui'
-import { PageHeading } from '../components/PageHeading'
-import { ButtonLink } from '../components/ButtonLink'
+import { Alert } from "@borderline/ui";
+import { PageHeading } from "../components/PageHeading";
+import { ButtonLink } from "../components/ButtonLink";
 
 export default function NotFound() {
   return (
@@ -13,5 +13,5 @@ export default function NotFound() {
         </ButtonLink>
       </Alert>
     </div>
-  )
+  );
 }

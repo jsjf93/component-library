@@ -17,7 +17,7 @@ pnpm add @borderline/icons
 Each icon accepts an optional `className` (defaults to `size-4 shrink-0`) and is drawn with `stroke="currentColor"`, so it inherits the surrounding text color:
 
 ```tsx
-import { Wallet, Send } from '@borderline/icons'
+import { Wallet, Send } from "@borderline/icons";
 
 export function Example() {
   return (
@@ -25,7 +25,7 @@ export function Example() {
       <Wallet className="size-6" />
       <Send />
     </span>
-  )
+  );
 }
 ```
 

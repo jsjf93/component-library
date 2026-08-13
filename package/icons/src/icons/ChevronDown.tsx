@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function ChevronDown({ className = 'size-4' }: IconProps) {
+export function ChevronDown({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -14,5 +14,5 @@ export function ChevronDown({ className = 'size-4' }: IconProps) {
     >
       <polyline points="6 9 12 15 18 9" />
     </svg>
-  )
+  );
 }

@@ -1,26 +1,28 @@
-import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
+import { forwardRef } from "react";
+import type { HTMLAttributes } from "react";
 
 export type ProgressProps = HTMLAttributes<HTMLDivElement> & {
-  label: string
-  value: number
-  max?: number
-  formatValue?: (value: number, max: number) => string
-}
+  label: string;
+  value: number;
+  max?: number;
+  formatValue?: (value: number, max: number) => string;
+};
 
 export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ({ className, label, value, max = 100, formatValue, ...props }, ref) => {
-    const clamped = Math.min(Math.max(value, 0), max)
-    const pct = (clamped / max) * 100
+    const clamped = Math.min(Math.max(value, 0), max);
+    const pct = (clamped / max) * 100;
     const display = formatValue
       ? formatValue(clamped, max)
-      : `${Math.round(pct)}%`
+      : `${Math.round(pct)}%`;
 
     return (
       <div
         {...props}
         ref={ref}
-        className={['flex flex-col gap-1.5', className].filter(Boolean).join(' ')}
+        className={["flex flex-col gap-1.5", className]
+          .filter(Boolean)
+          .join(" ")}
       >
         <div className="flex items-center justify-between text-sm">
           <span className="text-foreground font-medium">{label}</span>
@@ -40,8 +42,8 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
           />
         </div>
       </div>
-    )
+    );
   },
-)
+);
 
-Progress.displayName = 'Progress'
+Progress.displayName = "Progress";

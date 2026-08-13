@@ -1,38 +1,38 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Progress } from './Progress'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Progress } from "./Progress";
 
 const meta: Meta<typeof Progress> = {
-  title: 'Components/Progress',
+  title: "Components/Progress",
   component: Progress,
-  parameters: { layout: 'padded' },
-}
+  parameters: { layout: "padded" },
+};
 
-export default meta
-type Story = StoryObj<typeof Progress>
+export default meta;
+type Story = StoryObj<typeof Progress>;
 
 export const Default: Story = {
   args: {
-    label: 'KYC Verification',
+    label: "KYC Verification",
     value: 67,
   },
-}
+};
 
 export const WithCustomValue: Story = {
   args: {
-    label: 'Monthly spend limit',
+    label: "Monthly spend limit",
     value: 8400,
     max: 10000,
     formatValue: (v: number, m: number) =>
       `$${v.toLocaleString()} / $${m.toLocaleString()}`,
   },
-}
+};
 
 export const Complete: Story = {
   args: {
-    label: 'Profile setup',
+    label: "Profile setup",
     value: 100,
   },
-}
+};
 
 export const AllVariants: Story = {
   render: () => (
@@ -42,8 +42,10 @@ export const AllVariants: Story = {
         label="Monthly spend limit"
         value={8400}
         max={10000}
-        formatValue={(v: number, m: number) => `$${v.toLocaleString()} / $${m.toLocaleString()}`}
+        formatValue={(v: number, m: number) =>
+          `$${v.toLocaleString()} / $${m.toLocaleString()}`
+        }
       />
     </div>
   ),
-}
+};

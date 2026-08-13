@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function BarChart({ className = 'size-4' }: IconProps) {
+export function BarChart({ className = "size-4" }: IconProps) {
   return (
     <svg
       className={className}
@@ -16,5 +16,5 @@ export function BarChart({ className = 'size-4' }: IconProps) {
       <rect x="10" y="7" width="4" height="14" rx="1" />
       <rect x="17" y="3" width="4" height="18" rx="1" />
     </svg>
-  )
+  );
 }

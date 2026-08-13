@@ -1,6 +1,6 @@
-type IconProps = { className?: string }
+type IconProps = { className?: string };
 
-export function X({ className = 'size-4 shrink-0' }: IconProps) {
+export function X({ className = "size-4 shrink-0" }: IconProps) {
   return (
     <svg
       className={className}
@@ -15,5 +15,5 @@ export function X({ className = 'size-4 shrink-0' }: IconProps) {
       <path d="M6 6l12 12" />
       <path d="M18 6 6 18" />
     </svg>
-  )
+  );
 }

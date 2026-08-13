@@ -1,29 +1,46 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Badge } from './Badge'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Badge } from "./Badge";
 
 const meta = {
-  title: 'Components/Badge',
+  title: "Components/Badge",
   component: Badge,
-  args: { children: 'Badge', variant: 'default' },
+  args: { children: "Badge", variant: "default" },
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['default', 'secondary', 'outline', 'destructive', 'verified', 'pending', 'review', 'failed'],
+      control: "select",
+      options: [
+        "default",
+        "secondary",
+        "outline",
+        "destructive",
+        "verified",
+        "pending",
+        "review",
+        "failed",
+      ],
     },
   },
-} satisfies Meta<typeof Badge>
+} satisfies Meta<typeof Badge>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
-const Section = ({ label, children }: { label: string; children: React.ReactNode }) => (
+const Section = ({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) => (
   <div className="space-y-3">
-    <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">{label}</p>
+    <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+      {label}
+    </p>
     <div className="flex flex-wrap items-center gap-3">{children}</div>
   </div>
-)
+);
 
 export const Showcase: Story = {
   render: () => (
@@ -40,7 +57,7 @@ export const Showcase: Story = {
       </Section>
     </div>
   ),
-}
+};
 
 export const Variants: Story = {
   render: () => (
@@ -51,7 +68,7 @@ export const Variants: Story = {
       <Badge variant="destructive">Destructive</Badge>
     </div>
   ),
-}
+};
 
 export const Status: Story = {
   render: () => (
@@ -62,4 +79,4 @@ export const Status: Story = {
       <Badge variant="failed">Failed</Badge>
     </div>
   ),
-}
+};

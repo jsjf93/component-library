@@ -1,11 +1,11 @@
-import { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
-import { AppShell } from '@borderline/ui'
-import { AppSidebar } from './components/AppSidebar'
-import { SkipLink } from './components/SkipLink'
-import { RouteFallback } from './components/RouteFallback'
-import { ErrorBoundary } from './components/ErrorBoundary'
-import { resetAllMarketData } from './lib/data'
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import { AppShell } from "@borderline/ui";
+import { AppSidebar } from "./components/AppSidebar";
+import { SkipLink } from "./components/SkipLink";
+import { RouteFallback } from "./components/RouteFallback";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { resetAllMarketData } from "./lib/data";
 
 /**
  * Layout route: the persistent shell (sidebar + mobile drawer via `AppShell`)
@@ -26,5 +26,5 @@ export function App() {
         </div>
       </AppShell>
     </>
-  )
+  );
 }

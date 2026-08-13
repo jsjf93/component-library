@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Tabs } from './Tabs'
-import { TabList } from './TabList'
-import { Tab } from './Tab'
+import { useState } from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Tabs } from "./Tabs";
+import { TabList } from "./TabList";
+import { Tab } from "./Tab";
 
 const meta = {
-  title: 'Components/Tabs',
+  title: "Components/Tabs",
   component: Tabs,
   args: {
-    defaultValue: 'all',
+    defaultValue: "all",
   },
-} satisfies Meta<typeof Tabs>
+} satisfies Meta<typeof Tabs>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  render: args => (
+  render: (args) => (
     <Tabs {...args}>
       <TabList>
         <Tab value="all">All</Tab>
@@ -26,7 +26,7 @@ export const Playground: Story = {
       </TabList>
     </Tabs>
   ),
-}
+};
 
 export const Default: Story = {
   render: () => (
@@ -39,12 +39,12 @@ export const Default: Story = {
       </TabList>
     </Tabs>
   ),
-}
+};
 
 export const Controlled: Story = {
   render: () => {
     function ControlledExample() {
-      const [value, setValue] = useState('incoming')
+      const [value, setValue] = useState("incoming");
       return (
         <div className="space-y-4">
           <Tabs value={value} onValueChange={setValue}>
@@ -59,11 +59,11 @@ export const Controlled: Story = {
             Selected: <strong>{value}</strong>
           </p>
         </div>
-      )
+      );
     }
-    return <ControlledExample />
+    return <ControlledExample />;
   },
-}
+};
 
 export const Overflow: Story = {
   render: () => (
@@ -82,7 +82,7 @@ export const Overflow: Story = {
       </Tabs>
     </div>
   ),
-}
+};
 
 export const Disabled: Story = {
   render: () => (
@@ -90,9 +90,11 @@ export const Disabled: Story = {
       <TabList>
         <Tab value="all">All</Tab>
         <Tab value="incoming">Incoming</Tab>
-        <Tab value="outgoing" disabled>Outgoing</Tab>
+        <Tab value="outgoing" disabled>
+          Outgoing
+        </Tab>
         <Tab value="pending">Pending</Tab>
       </TabList>
     </Tabs>
   ),
-}
+};

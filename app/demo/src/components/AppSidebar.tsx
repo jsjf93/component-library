@@ -4,15 +4,15 @@ import {
   SidebarNav,
   SidebarFooter,
   ThemeToggle,
-} from '@borderline/ui'
-import { Leaf, Home, BarChart, Settings, Wallet } from '@borderline/icons'
-import { NavItem } from './NavItem'
+} from "@borderline/ui";
+import { Leaf, Home, BarChart, Settings, Wallet } from "@borderline/icons";
+import { NavItem } from "./NavItem";
 
 type AppSidebarProps = {
   /** Provided by `AppShell` when it clones the sidebar for the mobile drawer. */
-  open?: boolean
-  onClose?: () => void
-}
+  open?: boolean;
+  onClose?: () => void;
+};
 
 export function AppSidebar({ open, onClose }: AppSidebarProps) {
   return (
@@ -39,5 +39,5 @@ export function AppSidebar({ open, onClose }: AppSidebarProps) {
         </div>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

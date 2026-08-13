@@ -39,7 +39,8 @@ export const WithDescription: Story = {
         <Button
           onClick={() =>
             toast.success("Transfer sent", {
-              description: "$4,200.00 to Acme Corp will settle in 1-2 business days.",
+              description:
+                "$4,200.00 to Acme Corp will settle in 1-2 business days.",
             })
           }
         >
@@ -117,7 +118,11 @@ export const Positions: Story = {
   },
   render: (args) => (
     <>
-      <Button onClick={() => toast.info("Positioned toast", { description: args.position })}>
+      <Button
+        onClick={() =>
+          toast.info("Positioned toast", { description: args.position })
+        }
+      >
         Fire toast
       </Button>
       <Toaster {...args} />
