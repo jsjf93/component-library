@@ -1,0 +1,23 @@
+--- app/demo/src/pages/Markets.tsx
++++ app/demo/src/pages/Markets.tsx
+@@ -46,11 +47,15 @@
+     const byCurrency = pairs.filter((p) => p.quote === currency);
+     const q = query.trim().toUpperCase();
+
+-    const base = q
+-      ? byCurrency.filter((p) => p.base.includes(q)).slice(0, 30)
+-      : CATALOG.map((b) => byCurrency.find((p) => p.base === b)).filter(
+-          (p): p is Pair => Boolean(p),
+-        );
++    let base: Pair[];
++    if (q) {
++      base = byCurrency.filter((p) => p.base.includes(q)).slice(0, 30);
++    } else {
++      const lookup = new Map<string, Pair>();
++      for (const p of byCurrency) lookup.set(p.base, p);
++      base = CATALOG.map((b) => lookup.get(b)).filter(
++        (p): p is Pair => Boolean(p),
++      );
++    }
+
+     if (category === "all") return base;
