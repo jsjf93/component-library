@@ -25,4 +25,10 @@ export default defineConfig([
       },
     },
   },
+  {
+    files: ["**/*.stories.{ts,tsx}"],
+    rules: {
+      "react-hooks/rules-of-hooks": "off",
+    },
+  },
 ]);
