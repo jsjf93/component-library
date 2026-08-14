@@ -27,6 +27,8 @@ pnpm storybook          # start Storybook for @borderline/ui on :6006
 pnpm build-storybook    # build Storybook statically
 
 pnpm lint               # lint all workspaces
+pnpm format:check       # check formatting across repo
+pnpm test               # run UI tests in headless browser (Vitest + Playwright)
 ```
 
 To run a command in a specific workspace directly:
