@@ -1,4 +1,4 @@
-import { Alert } from "@borderline/ui";
+import { Alert } from "@borderline-ui/ui";
 import { PageHeading } from "../components/PageHeading";
 import { ButtonLink } from "../components/ButtonLink";
 

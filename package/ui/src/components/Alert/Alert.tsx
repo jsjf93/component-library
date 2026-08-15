@@ -5,7 +5,7 @@ import {
   AlertCircle,
   InfoCircle,
   XCircle,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 
 export type AlertVariant = "success" | "warning" | "danger" | "info";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Toggle } from "@borderline/ui";
+import { Toggle } from "@borderline-ui/ui";
 
 const meta = {
   title: "Components/Toggle",

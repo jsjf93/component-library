@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { AppShell } from "@borderline/ui";
+import { AppShell } from "@borderline-ui/ui";
 import { AppSidebar } from "./components/AppSidebar";
 import { SkipLink } from "./components/SkipLink";
 import { RouteFallback } from "./components/RouteFallback";

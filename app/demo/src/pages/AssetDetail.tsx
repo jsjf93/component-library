@@ -1,6 +1,6 @@
 import { Suspense, use } from "react";
 import { useParams } from "react-router-dom";
-import { Alert, Card, Progress, Skeleton } from "@borderline/ui";
+import { Alert, Card, Progress, Skeleton } from "@borderline-ui/ui";
 import { PageHeading } from "../components/PageHeading";
 import { PriceTicker } from "../components/PriceTicker";
 import { Sparkline } from "../components/Sparkline";

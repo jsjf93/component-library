@@ -9,7 +9,7 @@ import {
 import { createPortal } from "react-dom";
 import type { HTMLAttributes, ReactNode } from "react";
 import { Button } from "../Button/Button";
-import { X } from "@borderline/icons";
+import { X } from "@borderline-ui/icons";
 
 const ModalTitleIdContext = createContext<string | undefined>(undefined);
 

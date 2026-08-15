@@ -1,4 +1,4 @@
-import { Skeleton } from "@borderline/ui";
+import { Skeleton } from "@borderline-ui/ui";
 
 /** Suspense fallback for lazily-loaded routes and streaming page data. */
 export function RouteFallback() {

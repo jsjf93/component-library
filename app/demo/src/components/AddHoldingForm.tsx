@@ -1,6 +1,6 @@
 import { useMemo, useState, type FormEvent } from "react";
-import { Button, Input, Select } from "@borderline/ui";
-import { Plus } from "@borderline/icons";
+import { Button, Input, Select } from "@borderline-ui/ui";
+import { Plus } from "@borderline-ui/icons";
 import type { Pair } from "../lib/kraken";
 import { usePortfolio } from "../state/PortfolioContext";
 import { useSettings } from "../state/SettingsContext";

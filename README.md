@@ -6,10 +6,10 @@ A pnpm monorepo housing a React component library, its icon set, and a demo app.
 
 `pnpm-workspace.yaml` globs `package/*` and `app/*`:
 
-- **`package/icons`** — [`@borderline/icons`](package/icons/README.md): hand-authored SVG icon components (Vite library mode), consumed by `@borderline/ui`.
-- **`package/ui`** — [`@borderline/ui`](package/ui/README.md): the component library (Vite library mode, Tailwind CSS v4). Depends on `@borderline/icons` via `workspace:*`.
+- **`package/icons`** — [`@borderline-ui/icons`](package/icons/README.md): hand-authored SVG icon components (Vite library mode), consumed by `@borderline-ui/ui`.
+- **`package/ui`** — [`@borderline-ui/ui`](package/ui/README.md): the component library (Vite library mode, Tailwind CSS v4). Depends on `@borderline-ui/icons` via `workspace:*`.
 - **`app/storybook`** — dedicated Storybook documentation app housing all component, icon, and recipe stories with instant HMR against source files.
-- **`app/demo`** — a minimal React + Vite app ([README](app/demo/README.md)) that consumes `@borderline/ui` for manual integration testing.
+- **`app/demo`** — a minimal React + Vite app ([README](app/demo/README.md)) that consumes `@borderline-ui/ui` for manual integration testing.
 
 ## Commands
 
@@ -19,23 +19,23 @@ Run from the repo root unless noted.
 pnpm install            # install all workspace dependencies
 
 pnpm build              # build all workspaces in dependency order (icons → ui → demo)
-pnpm build:icons        # build @borderline/icons only
-pnpm build:ui           # build @borderline/ui only
+pnpm build:icons        # build @borderline-ui/icons only
+pnpm build:ui           # build @borderline-ui/ui only
 pnpm build:demo         # build the demo app only
 
 pnpm dev:demo           # start the demo app dev server (Vite)
-pnpm storybook          # start Storybook for @borderline/ui on :6006
+pnpm storybook          # start Storybook for @borderline-ui/ui on :6006
 pnpm build-storybook    # build Storybook statically
 
 pnpm lint               # lint all workspaces
-pnpm release            # publish the @borderline/* packages
+pnpm release            # publish the @borderline-ui/* packages
 ```
 
 To run a script in a single workspace:
 
 ```bash
-pnpm --filter @borderline/icons <script>
-pnpm --filter @borderline/ui <script>
+pnpm --filter @borderline-ui/icons <script>
+pnpm --filter @borderline-ui/ui <script>
 pnpm --filter demo <script>
 ```
 

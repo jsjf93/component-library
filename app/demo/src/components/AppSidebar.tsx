@@ -4,8 +4,8 @@ import {
   SidebarNav,
   SidebarFooter,
   ThemeToggle,
-} from "@borderline/ui";
-import { Leaf, Home, BarChart, Settings, Wallet } from "@borderline/icons";
+} from "@borderline-ui/ui";
+import { Leaf, Home, BarChart, Settings, Wallet } from "@borderline-ui/icons";
 import { NavItem } from "./NavItem";
 
 type AppSidebarProps = {

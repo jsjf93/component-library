@@ -9,14 +9,14 @@ import {
   CreditCard,
   Shield,
   Settings,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 import {
   Sidebar,
   SidebarHeader,
   SidebarNav,
   SidebarItem,
   SidebarFooter,
-} from "@borderline/ui";
+} from "@borderline-ui/ui";
 
 const meta = {
   title: "Components/Sidebar/Sidebar",

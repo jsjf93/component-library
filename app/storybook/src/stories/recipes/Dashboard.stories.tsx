@@ -9,7 +9,7 @@ import {
   CreditCard,
   Shield,
   Settings,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 import {
   AppShell,
   Sidebar,
@@ -19,7 +19,7 @@ import {
   SidebarFooter,
   StatCard,
   Card,
-} from "@borderline/ui";
+} from "@borderline-ui/ui";
 
 const meta: Meta = {
   title: "Recipes/Dashboard",

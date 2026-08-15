@@ -63,7 +63,7 @@ jobs:
         run: pnpm build
 
       - name: Verify package packaging
-        run: pnpm --filter "@borderline/*" pack --dry-run
+        run: pnpm --filter "@borderline-ui/*" pack --dry-run
 
   test:
     name: Browser Component Tests

@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import type { ReactNode } from "react";
 import { Card } from "../Card/Card";
-import { TrendUp, TrendDown } from "@borderline/icons";
+import { TrendUp, TrendDown } from "@borderline-ui/icons";
 
 export type StatCardTrend = {
   value: string;

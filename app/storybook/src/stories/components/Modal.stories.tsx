@@ -9,7 +9,7 @@ import {
   Input,
   Textarea,
   Alert,
-} from "@borderline/ui";
+} from "@borderline-ui/ui";
 
 const meta = {
   title: "Components/Modal",

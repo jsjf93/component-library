@@ -1,5 +1,5 @@
 /* Design tokens (so demo-authored utilities like bg-primary resolve) … */
-@import "@borderline/ui/theme.css";
+@import "@borderline-ui/ui/theme.css";
 /* … and the compiled component classes (.ui-button, .ui-card, etc.). Imported
    before tailwindcss so this app's own utilities (e.g. responsive variants
    like sm:flex-row) sort after — and win over — any unprefixed utility
@@ -7,7 +7,7 @@
    (e.g. Select/Input's flex-col wrapper), which would otherwise collide at
    equal specificity and always lose to the later rule regardless of
    viewport. */
-@import "@borderline/ui/styles.css";
+@import "@borderline-ui/ui/styles.css";
 @import "tailwindcss";
 
 :root {

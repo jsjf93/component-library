@@ -7,19 +7,19 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@borderline/ui/theme.css": path.resolve(
+      "@borderline-ui/ui/theme.css": path.resolve(
         import.meta.dirname,
         "../../package/ui/src/theme.css",
       ),
-      "@borderline/ui/styles.css": path.resolve(
+      "@borderline-ui/ui/styles.css": path.resolve(
         import.meta.dirname,
         "../../package/ui/src/index.css",
       ),
-      "@borderline/ui": path.resolve(
+      "@borderline-ui/ui": path.resolve(
         import.meta.dirname,
         "../../package/ui/src/index.ts",
       ),
-      "@borderline/icons": path.resolve(
+      "@borderline-ui/icons": path.resolve(
         import.meta.dirname,
         "../../package/icons/src/index.ts",
       ),

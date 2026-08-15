@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button, Toaster, toast } from "@borderline/ui";
+import { Button, Toaster, toast } from "@borderline-ui/ui";
 
 const meta = {
   title: "Components/Toast",

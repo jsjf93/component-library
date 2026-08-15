@@ -1,4 +1,4 @@
-import { Card, RadioGroup, Toggle } from "@borderline/ui";
+import { Card, RadioGroup, Toggle } from "@borderline-ui/ui";
 import { PageHeading } from "../components/PageHeading";
 import { useSettings } from "../state/SettingsContext";
 import type { Currency } from "../lib/format";

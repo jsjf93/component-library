@@ -1,5 +1,5 @@
-import { TrendUp, TrendDown } from "@borderline/icons";
-import { Spinner } from "@borderline/ui";
+import { TrendUp, TrendDown } from "@borderline-ui/icons";
+import { Spinner } from "@borderline-ui/ui";
 import { useTicker } from "../hooks/useTicker";
 import { formatCurrency, formatPercent, type Currency } from "../lib/format";
 

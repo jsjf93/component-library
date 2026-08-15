@@ -17,10 +17,10 @@ importers:
 
   app/demo:
     dependencies:
-      '@borderline/icons':
+      '@borderline-ui/icons':
         specifier: workspace:*
         version: link:../../package/icons
-      '@borderline/ui':
+      '@borderline-ui/ui':
         specifier: workspace:*
         version: link:../../package/ui
       react:
@@ -81,10 +81,10 @@ importers:
 
   app/storybook:
     dependencies:
-      '@borderline/icons':
+      '@borderline-ui/icons':
         specifier: workspace:*
         version: link:../../package/icons
-      '@borderline/ui':
+      '@borderline-ui/ui':
         specifier: workspace:*
         version: link:../../package/ui
       react:
@@ -210,7 +210,7 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
-      '@borderline/icons':
+      '@borderline-ui/icons':
         specifier: workspace:*
         version: link:../icons
       '@eslint/js':

@@ -20,19 +20,19 @@ const config: StorybookConfig = {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@borderline/ui/theme.css": resolve(
+      "@borderline-ui/ui/theme.css": resolve(
         import.meta.dirname,
         "../../../package/ui/src/theme.css",
       ),
-      "@borderline/ui/styles.css": resolve(
+      "@borderline-ui/ui/styles.css": resolve(
         import.meta.dirname,
         "../../../package/ui/src/index.css",
       ),
-      "@borderline/ui": resolve(
+      "@borderline-ui/ui": resolve(
         import.meta.dirname,
         "../../../package/ui/src/index.ts",
       ),
-      "@borderline/icons": resolve(
+      "@borderline-ui/icons": resolve(
         import.meta.dirname,
         "../../../package/icons/src/index.ts",
       ),

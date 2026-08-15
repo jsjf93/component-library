@@ -1,13 +1,13 @@
-# @borderline/icons
+# @borderline-ui/icons
 
-Hand-authored SVG icon components for React. Used by [`@borderline/ui`](https://www.npmjs.com/package/@borderline/ui), and usable on their own.
+Hand-authored SVG icon components for React. Used by [`@borderline-ui/ui`](https://www.npmjs.com/package/@borderline-ui/ui), and usable on their own.
 
 ## Installation
 
 ```bash
-npm install @borderline/icons
+npm install @borderline-ui/icons
 # or
-pnpm add @borderline/icons
+pnpm add @borderline-ui/icons
 ```
 
 `react` and `react-dom` (v19+) are peer dependencies.
@@ -17,7 +17,7 @@ pnpm add @borderline/icons
 Each icon accepts an optional `className` (defaults to `size-4 shrink-0`) and is drawn with `stroke="currentColor"`, so it inherits the surrounding text color:
 
 ```tsx
-import { Wallet, Send } from "@borderline/icons";
+import { Wallet, Send } from "@borderline-ui/icons";
 
 export function Example() {
   return (

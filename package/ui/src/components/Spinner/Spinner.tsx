@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import type { HTMLAttributes } from "react";
-import { Spinner as SpinnerIcon } from "@borderline/icons";
+import { Spinner as SpinnerIcon } from "@borderline-ui/icons";
 
 export type SpinnerSize = "sm" | "md" | "lg";
 

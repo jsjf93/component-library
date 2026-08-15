@@ -6,10 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 pnpm monorepo with four workspaces (`pnpm-workspace.yaml` globs `package/*` and `app/*`):
 
-- `package/icons` — the `@borderline/icons` package: a shared set of hand-authored SVG icon components (Vite library mode), consumed by `@borderline/ui`.
-- `package/ui` — the `@borderline/ui` component library (Vite library mode, Tailwind CSS v4). Depends on `@borderline/icons` via `workspace:*`.
+- `package/icons` — the `@borderline-ui/icons` package: a shared set of hand-authored SVG icon components (Vite library mode), consumed by `@borderline-ui/ui`.
+- `package/ui` — the `@borderline-ui/ui` component library (Vite library mode, Tailwind CSS v4). Depends on `@borderline-ui/icons` via `workspace:*`.
 - `app/storybook` — the dedicated Storybook documentation app housing all component, icon, and recipe stories with instant HMR.
-- `app/demo` — a minimal React + Vite demo app that consumes `@borderline/ui` via `workspace:*`
+- `app/demo` — a minimal React + Vite demo app that consumes `@borderline-ui/ui` via `workspace:*`
 
 ## Commands
 
@@ -19,12 +19,12 @@ All commands run from the repo root unless noted.
 pnpm install            # install all workspace dependencies
 
 pnpm build              # build all workspaces in dependency order (icons → ui → demo)
-pnpm build:icons        # build @borderline/icons only (tsc + vite)
-pnpm build:ui           # build @borderline/ui only (tsc + vite)
+pnpm build:icons        # build @borderline-ui/icons only (tsc + vite)
+pnpm build:ui           # build @borderline-ui/ui only (tsc + vite)
 pnpm build:demo         # build the demo app only
 
 pnpm dev:demo           # start the demo app dev server (Vite)
-pnpm storybook          # start Storybook for @borderline/ui on :6006
+pnpm storybook          # start Storybook for @borderline-ui/ui on :6006
 pnpm build-storybook    # build Storybook statically
 
 pnpm lint               # lint all workspaces
@@ -35,8 +35,8 @@ pnpm test               # run UI tests in headless browser (Vitest + Playwright)
 To run a command in a specific workspace directly:
 
 ```bash
-pnpm --filter @borderline/icons <script>
-pnpm --filter @borderline/ui <script>
+pnpm --filter @borderline-ui/icons <script>
+pnpm --filter @borderline-ui/ui <script>
 pnpm --filter demo <script>
 ```
 
@@ -57,11 +57,11 @@ pnpm --filter demo <script>
 
 - **Entry point**: `src/index.ts` — re-exports every icon.
 - **Icons**: one icon per file in `src/icons/`. Each is an SVG React component taking `IconProps` (`{ className }`, defaulting to `'size-4 shrink-0'`) and drawn with `stroke="currentColor"` so it inherits text color from its container.
-- **Build**: same as `@borderline/ui` — `tsc -p tsconfig.build.json` then `vite build`, ESM-only, with React externalized.
+- **Build**: same as `@borderline-ui/ui` — `tsc -p tsconfig.build.json` then `vite build`, ESM-only, with React externalized.
 
 ### `app/demo`
 
-Minimal app for manual integration testing. Add components from `@borderline/ui` here to verify they render correctly in a real consumer context. Tailwind and the workspace dependency are already wired up.
+Minimal app for manual integration testing. Add components from `@borderline-ui/ui` here to verify they render correctly in a real consumer context. Tailwind and the workspace dependency are already wired up.
 
 ### Adding a new component
 

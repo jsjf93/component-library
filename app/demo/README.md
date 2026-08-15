@@ -1,6 +1,6 @@
 # demo
 
-A minimal React + Vite app that consumes [`@borderline/ui`](../../package/ui/README.md) (and [`@borderline/icons`](../../package/icons/README.md)) via `workspace:*`. Its purpose is manual integration testing — drop components in here to verify they render correctly in a real consumer context.
+A minimal React + Vite app that consumes [`@borderline-ui/ui`](../../package/ui/README.md) (and [`@borderline-ui/icons`](../../package/icons/README.md)) via `workspace:*`. Its purpose is manual integration testing — drop components in here to verify they render correctly in a real consumer context.
 
 The demo is dressed up as a small **crypto portfolio tracker** (backed by live Kraken market data) to exercise the library against a realistic app: an `AppShell` layout with a sidebar, code-split routes, context-based state, and a mix of cards, stats, forms, and tables.
 
@@ -24,7 +24,7 @@ pnpm lint               # lint this workspace
 
 ## How it consumes the library
 
-- **Styles** — `src/index.css` pulls in Tailwind, then `@borderline/ui/theme.css` (design tokens, so demo-authored utilities like `bg-primary` resolve) and `@borderline/ui/styles.css` (the compiled component classes).
+- **Styles** — `src/index.css` pulls in Tailwind, then `@borderline-ui/ui/theme.css` (design tokens, so demo-authored utilities like `bg-primary` resolve) and `@borderline-ui/ui/styles.css` (the compiled component classes).
 - **Layout** — `src/App.tsx` wraps every route in the library's `AppShell`; `main.tsx` provides `SettingsContext` and `PortfolioContext` above the router.
 - **Routing** — `src/router.tsx` defines the routes, each page lazy-loaded and streamed into the App layout's Suspense boundary:
   - `/` — Portfolio (holdings overview)

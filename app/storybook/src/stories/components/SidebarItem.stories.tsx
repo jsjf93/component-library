@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Home, Wallet, Send, BarChart } from "@borderline/icons";
-import { SidebarItem } from "@borderline/ui";
+import { Home, Wallet, Send, BarChart } from "@borderline-ui/icons";
+import { SidebarItem } from "@borderline-ui/ui";
 
 /** Stand-in for a router Link (e.g. React Router) to show the `as` prop. */
 const RouterLink = ({

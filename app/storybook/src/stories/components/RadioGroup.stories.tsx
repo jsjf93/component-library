@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { RadioGroup } from "@borderline/ui";
+import { RadioGroup } from "@borderline-ui/ui";
 
 const transferOptions = [
   {

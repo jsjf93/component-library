@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ThemeToggle, ThemeProvider, useTheme } from "@borderline/ui";
+import { ThemeToggle, ThemeProvider, useTheme } from "@borderline-ui/ui";
 
 const meta = {
   title: "Components/ThemeToggle",

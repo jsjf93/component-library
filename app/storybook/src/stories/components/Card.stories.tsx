@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Card, StatCard, Badge, Button } from "@borderline/ui";
+import { Card, StatCard, Badge, Button } from "@borderline-ui/ui";
 import {
   Wallet,
   BarChart,
@@ -7,7 +7,7 @@ import {
   CreditCard,
   Send,
   Move,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 
 const meta = {
   title: "Components/Card",

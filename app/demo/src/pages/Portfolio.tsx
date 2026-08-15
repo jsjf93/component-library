@@ -1,7 +1,7 @@
 import { Suspense, use } from "react";
 import { Link } from "react-router-dom";
-import { Button, Card, Skeleton, StatCard } from "@borderline/ui";
-import { Wallet, BarChart, X } from "@borderline/icons";
+import { Button, Card, Skeleton, StatCard } from "@borderline-ui/ui";
+import { Wallet, BarChart, X } from "@borderline-ui/icons";
 import { PageHeading } from "../components/PageHeading";
 import { PriceTicker } from "../components/PriceTicker";
 import { AddHoldingForm } from "../components/AddHoldingForm";

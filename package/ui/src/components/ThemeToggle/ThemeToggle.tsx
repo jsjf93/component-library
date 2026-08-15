@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import type { ButtonHTMLAttributes } from "react";
-import { Sun, Moon } from "@borderline/icons";
+import { Sun, Moon } from "@borderline-ui/icons";
 import { useTheme } from "../../theme/theme-context";
 
 export type ThemeToggleProps = Omit<

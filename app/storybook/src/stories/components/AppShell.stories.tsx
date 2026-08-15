@@ -6,7 +6,7 @@ import {
   Send,
   BarChart,
   Settings,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 import {
   AppShell,
   Sidebar,
@@ -14,7 +14,7 @@ import {
   SidebarNav,
   SidebarItem,
   SidebarFooter,
-} from "@borderline/ui";
+} from "@borderline-ui/ui";
 
 const meta: Meta<typeof AppShell> = {
   title: "Components/AppShell",

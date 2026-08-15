@@ -1,5 +1,5 @@
 {
-  "name": "@borderline/ui",
+  "name": "@borderline-ui/ui",
   "version": "0.1.0",
   "description": "A React component library built with Tailwind CSS v4.",
   "keywords": [
@@ -61,7 +61,7 @@
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@borderline/icons": "workspace:*",
+    "@borderline-ui/icons": "workspace:*",
     "@eslint/js": "^9.39.4",
     "@tailwindcss/vite": "^4.1.14",
     "@types/node": "^24.12.2",

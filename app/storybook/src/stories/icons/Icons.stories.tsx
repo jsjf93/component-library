@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import * as Icons from "@borderline/icons";
+import * as Icons from "@borderline-ui/icons";
 
 type IconComponent = (props: { className?: string }) => React.ReactElement;
 

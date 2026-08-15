@@ -6,7 +6,7 @@ import {
   InfoCircle,
   XCircle,
   X,
-} from "@borderline/icons";
+} from "@borderline-ui/icons";
 import { Button } from "../Button/Button";
 import { dismiss } from "./toast-store";
 import type { ToastRecord, ToastVariant } from "./toast-store";

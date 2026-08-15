@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "@borderline/ui";
+import { ThemeProvider } from "@borderline-ui/ui";
 import "./index.css";
 import { router } from "./router";
 import { SettingsProvider } from "./state/SettingsContext";

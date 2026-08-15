@@ -1,6 +1,6 @@
 import { Suspense, use, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, Input, Skeleton, Tab, TabList, Tabs } from "@borderline/ui";
+import { Card, Input, Skeleton, Tab, TabList, Tabs } from "@borderline-ui/ui";
 import { PageHeading } from "../components/PageHeading";
 import { PriceTicker } from "../components/PriceTicker";
 import { ErrorBoundary } from "../components/ErrorBoundary";

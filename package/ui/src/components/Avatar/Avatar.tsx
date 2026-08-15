@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
 import type { HTMLAttributes } from "react";
-import { User } from "@borderline/icons";
+import { User } from "@borderline-ui/icons";
 
 export type AvatarSize = "sm" | "md" | "lg";
 
