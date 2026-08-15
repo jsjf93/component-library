@@ -7,7 +7,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", "storybook-static"]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
@@ -23,6 +23,12 @@ export default defineConfig([
       parserOptions: {
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+  },
+  {
+    files: ["**/*.stories.{ts,tsx}"],
+    rules: {
+      "react-hooks/rules-of-hooks": "off",
     },
   },
 ]);

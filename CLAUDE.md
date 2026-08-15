@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-pnpm monorepo with three workspaces (`pnpm-workspace.yaml` globs `package/*` and `app/*`):
+pnpm monorepo with four workspaces (`pnpm-workspace.yaml` globs `package/*` and `app/*`):
 
 - `package/icons` — the `@borderline/icons` package: a shared set of hand-authored SVG icon components (Vite library mode), consumed by `@borderline/ui`.
-- `package/ui` — the `@borderline/ui` component library (Vite library mode, Tailwind CSS v4, Storybook). Depends on `@borderline/icons` via `workspace:*`.
+- `package/ui` — the `@borderline/ui` component library (Vite library mode, Tailwind CSS v4). Depends on `@borderline/icons` via `workspace:*`.
+- `app/storybook` — the dedicated Storybook documentation app housing all component, icon, and recipe stories with instant HMR.
 - `app/demo` — a minimal React + Vite demo app that consumes `@borderline/ui` via `workspace:*`
 
 ## Commands
@@ -65,11 +66,13 @@ Minimal app for manual integration testing. Add components from `@borderline/ui`
 ### Adding a new component
 
 1. Create `package/ui/src/components/MyComponent/MyComponent.tsx` — export the component and its props type.
-2. Add a `.stories.tsx` file alongside it.
-3. Re-export from `package/ui/src/index.ts`.
-4. Add any component-scoped CSS classes to `package/ui/src/index.css`.
+2. Add a test file `package/ui/src/components/MyComponent/MyComponent.test.tsx`.
+3. Add a story file `app/storybook/src/stories/components/MyComponent.stories.tsx`.
+4. Re-export from `package/ui/src/index.ts`.
+5. Add any component-scoped CSS classes to `package/ui/src/index.css`.
 
 ### Adding a new icon
 
 1. Create `package/icons/src/icons/MyIcon.tsx` — an SVG component taking `IconProps` with `stroke="currentColor"`.
 2. Re-export from `package/icons/src/index.ts`.
+3. The icon is automatically picked up in `app/storybook/src/stories/icons/Icons.stories.tsx`.
