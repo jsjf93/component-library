@@ -8,6 +8,5 @@
     "rootDir": "./src",
     "outDir": "./dist"
   },
-  "include": ["src"],
-  "exclude": ["src/**/*.stories.tsx"]
+  "include": ["src"]
 }
