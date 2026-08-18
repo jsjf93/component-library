@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import type { ReactElement } from "react";
 import {
-  CheckCircle,
   AlertCircle,
+  CheckCircle,
   InfoCircle,
-  XCircle,
   X,
+  XCircle,
 } from "@borderline-ui/icons";
+import type { ReactElement } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "../Button/Button";
-import { dismiss } from "./toast-store";
 import type { ToastRecord, ToastVariant } from "./toast-store";
+import { dismiss } from "./toast-store";
 
 const EXIT_DURATION = 150;
 
@@ -58,10 +58,10 @@ export function Toast({ toast }: ToastProps) {
     timeoutRef.current = window.setTimeout(startExit, ms);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: start timer once on mount
   useEffect(() => {
     startTimer(remainingRef.current);
     return clearTimer;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePause = () => {
@@ -80,6 +80,8 @@ export function Toast({ toast }: ToastProps) {
 
   return (
     <div
+      role="status"
+      aria-live="polite"
       className={[
         "ui-toast pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-lg",
         leaving ? "animate-toast-out" : "animate-toast-in",

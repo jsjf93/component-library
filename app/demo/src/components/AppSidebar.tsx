@@ -1,11 +1,11 @@
+import { BarChart, Home, Leaf, Settings, Wallet } from "@borderline-ui/icons";
 import {
   Sidebar,
+  SidebarFooter,
   SidebarHeader,
   SidebarNav,
-  SidebarFooter,
   ThemeToggle,
 } from "@borderline-ui/ui";
-import { Leaf, Home, BarChart, Settings, Wallet } from "@borderline-ui/icons";
 import { NavItem } from "./NavItem";
 
 type AppSidebarProps = {

@@ -1,6 +1,6 @@
-import { forwardRef, useId, useState } from "react";
+import { Eye, EyeOff, Search } from "@borderline-ui/icons";
 import type { InputHTMLAttributes } from "react";
-import { Search, Eye, EyeOff } from "@borderline-ui/icons";
+import { forwardRef, useId, useState } from "react";
 
 export type InputVariant = "default" | "search" | "password";
 

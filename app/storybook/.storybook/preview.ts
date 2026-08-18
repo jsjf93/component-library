@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import type { Preview } from "@storybook/react-vite";
+import { useEffect } from "react";
 import "../src/index.css";
 
 const preview: Preview = {

@@ -27,8 +27,11 @@ pnpm dev:demo           # start the demo app dev server (Vite)
 pnpm storybook          # start Storybook for @borderline-ui/ui on :6006
 pnpm build-storybook    # build Storybook statically
 
-pnpm lint               # lint all workspaces
-pnpm format:check       # check formatting across repo
+pnpm lint               # lint code with Biome
+pnpm format             # format code with Biome
+pnpm format:check       # check formatting across repo with Biome
+pnpm check              # check lint, formatting, and imports with Biome
+pnpm check:write        # check and automatically fix issues with Biome
 pnpm test               # run UI tests in headless browser (Vitest + Playwright)
 ```
 

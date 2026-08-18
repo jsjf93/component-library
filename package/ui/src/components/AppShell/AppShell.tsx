@@ -1,6 +1,6 @@
-import { cloneElement, useState } from "react";
-import type { ReactElement, ReactNode } from "react";
 import { Menu } from "@borderline-ui/icons";
+import type { ReactElement, ReactNode } from "react";
+import { cloneElement, useState } from "react";
 import type { SidebarProps } from "../Sidebar/Sidebar";
 
 export type AppShellProps = {

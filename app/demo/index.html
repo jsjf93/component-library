@@ -11,21 +11,21 @@
     <title>Verdant · Crypto Portfolio</title>
     <script>
       // Apply the persisted (or system) theme before first paint to avoid a flash.
-      (function () {
+      (() => {
         try {
-          var stored = localStorage.getItem("borderline-theme");
-          var theme =
+          const stored = localStorage.getItem("borderline-theme");
+          const theme =
             stored === "light" || stored === "dark" || stored === "system"
               ? stored
               : "system";
-          var isDark =
+          const isDark =
             theme === "dark" ||
             (theme === "system" &&
               window.matchMedia("(prefers-color-scheme: dark)").matches);
-          var root = document.documentElement;
+          const root = document.documentElement;
           root.classList.toggle("dark", isDark);
           root.style.colorScheme = isDark ? "dark" : "light";
-        } catch (e) {}
+        } catch (_e) {}
       })();
     </script>
   </head>

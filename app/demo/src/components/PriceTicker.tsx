@@ -1,7 +1,7 @@
-import { TrendUp, TrendDown } from "@borderline-ui/icons";
+import { TrendDown, TrendUp } from "@borderline-ui/icons";
 import { Spinner } from "@borderline-ui/ui";
 import { useTicker } from "../hooks/useTicker";
-import { formatCurrency, formatPercent, type Currency } from "../lib/format";
+import { type Currency, formatCurrency, formatPercent } from "../lib/format";
 
 type PriceTickerProps = {
   /** WebSocket symbol, e.g. `BTC/GBP`. */

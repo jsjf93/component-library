@@ -1,20 +1,23 @@
+import { ThemeProvider } from "@borderline-ui/ui";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "@borderline-ui/ui";
 import "./index.css";
 import { router } from "./router";
-import { SettingsProvider } from "./state/SettingsContext";
 import { PortfolioProvider } from "./state/PortfolioContext";
+import { SettingsProvider } from "./state/SettingsContext";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider>
-      <SettingsProvider>
-        <PortfolioProvider>
-          <RouterProvider router={router} />
-        </PortfolioProvider>
-      </SettingsProvider>
-    </ThemeProvider>
-  </StrictMode>,
-);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <ThemeProvider>
+        <SettingsProvider>
+          <PortfolioProvider>
+            <RouterProvider router={router} />
+          </PortfolioProvider>
+        </SettingsProvider>
+      </ThemeProvider>
+    </StrictMode>,
+  );
+}

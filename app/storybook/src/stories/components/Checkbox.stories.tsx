@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Checkbox } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   title: "Components/Checkbox",
@@ -40,11 +40,17 @@ export const Showcase: Story = {
           label={
             <>
               I agree to the{" "}
-              <a href="#" className="text-primary underline underline-offset-2">
+              <a
+                href="#terms"
+                className="text-primary underline underline-offset-2"
+              >
                 Terms of Service
               </a>{" "}
               and{" "}
-              <a href="#" className="text-primary underline underline-offset-2">
+              <a
+                href="#privacy"
+                className="text-primary underline underline-offset-2"
+              >
                 Privacy Policy
               </a>
             </>
@@ -96,11 +102,14 @@ export const WithLinkInLabel: Story = {
     label: (
       <>
         I agree to the{" "}
-        <a href="#" className="text-primary underline underline-offset-2">
+        <a href="#terms" className="text-primary underline underline-offset-2">
           Terms of Service
         </a>{" "}
         and{" "}
-        <a href="#" className="text-primary underline underline-offset-2">
+        <a
+          href="#privacy"
+          className="text-primary underline underline-offset-2"
+        >
           Privacy Policy
         </a>
       </>

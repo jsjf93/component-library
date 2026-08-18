@@ -1,8 +1,8 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import { Tabs } from "./Tabs";
-import { TabList } from "./TabList";
 import { Tab } from "./Tab";
+import { TabList } from "./TabList";
+import { Tabs } from "./Tabs";
 
 describe("Tabs component", () => {
   test("renders tablist and tabs with correct initial selected state", async () => {

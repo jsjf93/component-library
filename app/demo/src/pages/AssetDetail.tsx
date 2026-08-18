@@ -1,12 +1,11 @@
+import { Alert, Card, Progress, Skeleton } from "@borderline-ui/ui";
 import { Suspense, use } from "react";
 import { useParams } from "react-router-dom";
-import { Alert, Card, Progress, Skeleton } from "@borderline-ui/ui";
+import { ButtonLink } from "../components/ButtonLink";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 import { PageHeading } from "../components/PageHeading";
 import { PriceTicker } from "../components/PriceTicker";
 import { Sparkline } from "../components/Sparkline";
-import { ButtonLink } from "../components/ButtonLink";
-import { ErrorBoundary } from "../components/ErrorBoundary";
-import { useSettings } from "../state/SettingsContext";
 import {
   assetPairsResource,
   ohlcResource,
@@ -14,8 +13,9 @@ import {
   resetAssetPairs,
   tickerResource,
 } from "../lib/data";
-import { formatCompact, formatCurrency, type Currency } from "../lib/format";
+import { type Currency, formatCompact, formatCurrency } from "../lib/format";
 import type { Pair } from "../lib/kraken";
+import { useSettings } from "../state/SettingsContext";
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (

@@ -1,8 +1,8 @@
 import { describe, expect, test, vi } from "vitest";
-import { render } from "vitest-browser-react";
 import { page } from "vitest/browser";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "./Modal";
+import { render } from "vitest-browser-react";
 import { Button } from "../Button/Button";
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "./Modal";
 
 describe("Modal component", () => {
   test("renders modal dialog when open is true", async () => {

@@ -1,15 +1,15 @@
+import { X } from "@borderline-ui/icons";
+import type { HTMLAttributes, ReactNode } from "react";
 import {
-  useEffect,
-  useRef,
-  useCallback,
-  useId,
   createContext,
+  useCallback,
   useContext,
+  useEffect,
+  useId,
+  useRef,
 } from "react";
 import { createPortal } from "react-dom";
-import type { HTMLAttributes, ReactNode } from "react";
 import { Button } from "../Button/Button";
-import { X } from "@borderline-ui/icons";
 
 const ModalTitleIdContext = createContext<string | undefined>(undefined);
 
@@ -105,6 +105,7 @@ export function Modal({ open, onClose, size = "md", children }: ModalProps) {
       aria-hidden="true"
     >
       {/* Wondering about using a dialog element instead, maybe do at a later date */}
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: stopPropagation prevents backdrop click dismiss */}
       <div
         ref={panelRef}
         role="dialog"

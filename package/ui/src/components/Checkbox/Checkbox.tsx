@@ -1,5 +1,5 @@
-import { forwardRef, useId } from "react";
 import type { InputHTMLAttributes, ReactNode } from "react";
+import { forwardRef, useId } from "react";
 
 export type CheckboxProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

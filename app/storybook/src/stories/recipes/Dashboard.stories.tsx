@@ -1,25 +1,25 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  Leaf,
-  Home,
-  Wallet,
-  Send,
-  Receipt,
   BarChart,
   CreditCard,
-  Shield,
+  Home,
+  Leaf,
+  Receipt,
+  Send,
   Settings,
+  Shield,
+  Wallet,
 } from "@borderline-ui/icons";
 import {
   AppShell,
-  Sidebar,
-  SidebarHeader,
-  SidebarNav,
-  SidebarItem,
-  SidebarFooter,
-  StatCard,
   Card,
+  Sidebar,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarItem,
+  SidebarNav,
+  StatCard,
 } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta = {
   title: "Recipes/Dashboard",

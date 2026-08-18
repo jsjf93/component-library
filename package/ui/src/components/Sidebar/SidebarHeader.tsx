@@ -1,5 +1,5 @@
-import { forwardRef } from "react";
 import type { HTMLAttributes, ReactNode } from "react";
+import { forwardRef } from "react";
 
 export type SidebarHeaderProps = HTMLAttributes<HTMLDivElement> & {
   icon?: ReactNode;

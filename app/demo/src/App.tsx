@@ -1,10 +1,10 @@
+import { AppShell } from "@borderline-ui/ui";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { AppShell } from "@borderline-ui/ui";
 import { AppSidebar } from "./components/AppSidebar";
-import { SkipLink } from "./components/SkipLink";
-import { RouteFallback } from "./components/RouteFallback";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { RouteFallback } from "./components/RouteFallback";
+import { SkipLink } from "./components/SkipLink";
 import { resetAllMarketData } from "./lib/data";
 
 /**

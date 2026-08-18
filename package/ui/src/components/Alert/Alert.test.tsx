@@ -16,7 +16,7 @@ describe("Alert component", () => {
 
   test("renders children alongside the title", async () => {
     const { getByRole } = await render(
-      <Alert title="Heads up" children="Some extra detail" />,
+      <Alert title="Heads up">Some extra detail</Alert>,
     );
 
     await expect

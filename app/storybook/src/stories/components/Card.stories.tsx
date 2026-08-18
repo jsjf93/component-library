@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Card, StatCard, Badge, Button } from "@borderline-ui/ui";
 import {
-  Wallet,
   BarChart,
-  Payment,
   CreditCard,
-  Send,
   Move,
+  Payment,
+  Send,
+  Wallet,
 } from "@borderline-ui/icons";
+import { Badge, Button, Card, StatCard } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   title: "Components/Card",

@@ -1,13 +1,13 @@
+import { Card, Input, Skeleton, Tab, TabList, Tabs } from "@borderline-ui/ui";
 import { Suspense, use, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, Input, Skeleton, Tab, TabList, Tabs } from "@borderline-ui/ui";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 import { PageHeading } from "../components/PageHeading";
 import { PriceTicker } from "../components/PriceTicker";
-import { ErrorBoundary } from "../components/ErrorBoundary";
-import { useSettings } from "../state/SettingsContext";
 import { assetPairsResource, resetAssetPairs } from "../lib/data";
-import type { Pair } from "../lib/kraken";
 import type { Currency } from "../lib/format";
+import type { Pair } from "../lib/kraken";
+import { useSettings } from "../state/SettingsContext";
 
 type Category = "all" | "layer1" | "defi" | "payments" | "meme" | "stablecoin";
 

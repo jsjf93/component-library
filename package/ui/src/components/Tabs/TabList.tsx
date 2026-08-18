@@ -1,3 +1,4 @@
+import type { HTMLAttributes } from "react";
 import {
   Children,
   useCallback,
@@ -6,7 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-import type { HTMLAttributes } from "react";
 import { useTabsContext } from "./TabsContext";
 
 export type TabListProps = HTMLAttributes<HTMLDivElement>;
@@ -84,6 +84,7 @@ export function TabList({
     });
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: childCount triggers recalculation when tabs change
   useLayoutEffect(() => {
     const activeTab = positionIndicator(value);
     updateRovingTabIndex(value);

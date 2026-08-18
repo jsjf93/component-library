@@ -1,5 +1,5 @@
-import { forwardRef, useId, useState } from "react";
 import type { HTMLAttributes } from "react";
+import { forwardRef, useId, useState } from "react";
 
 export type ToggleProps = Omit<
   HTMLAttributes<HTMLButtonElement>,
@@ -51,6 +51,8 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     return (
       <div className="inline-flex items-center gap-3">
         {label && (
+          // biome-ignore lint/a11y/noStaticElementInteractions: clicking label toggles switch
+          // biome-ignore lint/a11y/useKeyWithClickEvents: switch button handles keyboard navigation
           <span
             id={labelId}
             className="text-sm font-medium text-foreground select-none cursor-pointer"

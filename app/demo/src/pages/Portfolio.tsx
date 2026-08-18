@@ -1,16 +1,16 @@
+import { BarChart, Wallet, X } from "@borderline-ui/icons";
+import { Button, Card, Skeleton, StatCard } from "@borderline-ui/ui";
 import { Suspense, use } from "react";
 import { Link } from "react-router-dom";
-import { Button, Card, Skeleton, StatCard } from "@borderline-ui/ui";
-import { Wallet, BarChart, X } from "@borderline-ui/icons";
-import { PageHeading } from "../components/PageHeading";
-import { PriceTicker } from "../components/PriceTicker";
 import { AddHoldingForm } from "../components/AddHoldingForm";
 import { ErrorBoundary } from "../components/ErrorBoundary";
-import { usePortfolio, type Holding } from "../state/PortfolioContext";
-import { useSettings } from "../state/SettingsContext";
+import { PageHeading } from "../components/PageHeading";
+import { PriceTicker } from "../components/PriceTicker";
 import { usePortfolioPrices } from "../hooks/usePortfolioPrices";
 import { assetPairsResource, resetAssetPairs } from "../lib/data";
-import { formatCurrency, formatPercent, type Currency } from "../lib/format";
+import { type Currency, formatCurrency, formatPercent } from "../lib/format";
+import { type Holding, usePortfolio } from "../state/PortfolioContext";
+import { useSettings } from "../state/SettingsContext";
 
 function PortfolioStats({ holdings }: { holdings: Holding[] }) {
   const { currency } = useSettings();

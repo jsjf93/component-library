@@ -1,12 +1,11 @@
-/* eslint-disable react-refresh/only-export-components -- provider + hook are intentionally colocated */
 import {
   createContext,
+  type ReactNode,
   useCallback,
   useContext,
   useEffect,
   useMemo,
   useState,
-  type ReactNode,
 } from "react";
 
 /** A single portfolio holding: a Kraken pair plus how much of the base asset you hold. */

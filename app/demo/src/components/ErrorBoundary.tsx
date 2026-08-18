@@ -1,5 +1,5 @@
-import { Component, type ReactNode } from "react";
 import { Alert, Button } from "@borderline-ui/ui";
+import { Component, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;

@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
-import { AppShell } from "./AppShell";
 import { Sidebar } from "../Sidebar/Sidebar";
+import { AppShell } from "./AppShell";
 
 describe("AppShell component", () => {
   test("renders sidebar and main content", async () => {

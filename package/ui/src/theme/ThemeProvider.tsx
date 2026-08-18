@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   useCallback,
   useEffect,
@@ -5,9 +6,8 @@ import {
   useState,
   useSyncExternalStore,
 } from "react";
-import type { ReactNode } from "react";
+import type { ResolvedTheme, Theme, ThemeContextValue } from "./theme-context";
 import { ThemeContext } from "./theme-context";
-import type { Theme, ResolvedTheme, ThemeContextValue } from "./theme-context";
 
 const isBrowser = typeof window !== "undefined";
 const DARK_QUERY = "(prefers-color-scheme: dark)";

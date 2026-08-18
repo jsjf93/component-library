@@ -1,5 +1,5 @@
-import { forwardRef } from "react";
 import type { ButtonHTMLAttributes } from "react";
+import { forwardRef } from "react";
 import { useTabsContext } from "./TabsContext";
 
 export type TabProps = Omit<

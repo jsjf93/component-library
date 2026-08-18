@@ -25,7 +25,9 @@ let count = 0;
 const listeners = new Set<() => void>();
 
 function emit() {
-  listeners.forEach((listener) => listener());
+  listeners.forEach((listener) => {
+    listener();
+  });
 }
 
 export function subscribe(listener: () => void) {
