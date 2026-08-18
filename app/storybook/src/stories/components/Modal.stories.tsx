@@ -1,15 +1,15 @@
-import { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
+  Alert,
   Button,
   Input,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
   Textarea,
-  Alert,
 } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 
 const meta = {
   title: "Components/Modal",

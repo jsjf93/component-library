@@ -1,7 +1,7 @@
-import { describe, expect, test, beforeEach } from "vitest";
+import { beforeEach, describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
 import { Toaster } from "./Toaster";
-import { toast, dismiss } from "./toast-store";
+import { dismiss, toast } from "./toast-store";
 
 describe("Toast component and store", () => {
   beforeEach(() => {

@@ -21,12 +21,8 @@
     "directory": "package/ui"
   },
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
+  "files": ["dist"],
+  "sideEffects": ["*.css"],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -53,7 +49,6 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build && cp src/theme.css dist/theme.css && echo '' > dist/index.css.d.ts",
     "prepublishOnly": "pnpm run build",
-    "lint": "eslint .",
     "test:browser": "vitest --config=vitest.browser.config.ts"
   },
   "peerDependencies": {
@@ -62,21 +57,14 @@
   },
   "devDependencies": {
     "@borderline-ui/icons": "workspace:*",
-    "@eslint/js": "^9.39.4",
     "@tailwindcss/vite": "^4.1.14",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.10",
-    "eslint": "^9.39.4",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
     "tailwindcss": "^4.1.14",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
+    "typescript": "~7.0.2",
     "vite": "^8.0.9",
     "vitest": "^4.1.10",
     "vitest-browser-react": "^2.2.0"

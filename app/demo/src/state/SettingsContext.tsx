@@ -1,11 +1,10 @@
-/* eslint-disable react-refresh/only-export-components -- provider + hook are intentionally colocated */
 import {
   createContext,
+  type ReactNode,
   useContext,
   useEffect,
   useMemo,
   useState,
-  type ReactNode,
 } from "react";
 import type { Currency } from "../lib/format";
 

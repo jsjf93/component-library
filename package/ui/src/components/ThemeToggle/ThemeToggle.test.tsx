@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
-import { ThemeToggle } from "./ThemeToggle";
 import { ThemeProvider } from "../../theme/ThemeProvider";
+import { ThemeToggle } from "./ThemeToggle";
 
 describe("ThemeToggle component", () => {
   test("renders theme toggle button inside ThemeProvider with light theme default", async () => {

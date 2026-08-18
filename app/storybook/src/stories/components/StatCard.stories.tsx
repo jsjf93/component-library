@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { StatCard } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 function WalletIcon() {
   return (

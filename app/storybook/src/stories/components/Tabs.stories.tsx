@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { Tab, TabList, Tabs } from "@borderline-ui/ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Tabs, TabList, Tab } from "@borderline-ui/ui";
+import { useState } from "react";
 
 const meta = {
   title: "Components/Tabs",

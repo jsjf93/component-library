@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Alert } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",

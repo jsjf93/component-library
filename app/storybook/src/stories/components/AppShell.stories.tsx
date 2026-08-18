@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  Leaf,
-  Home,
-  Wallet,
-  Send,
   BarChart,
+  Home,
+  Leaf,
+  Send,
   Settings,
+  Wallet,
 } from "@borderline-ui/icons";
 import {
   AppShell,
   Sidebar,
-  SidebarHeader,
-  SidebarNav,
-  SidebarItem,
   SidebarFooter,
+  SidebarHeader,
+  SidebarItem,
+  SidebarNav,
 } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof AppShell> = {
   title: "Components/AppShell",

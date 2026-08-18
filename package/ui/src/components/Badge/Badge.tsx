@@ -1,11 +1,11 @@
-import { forwardRef } from "react";
-import type { HTMLAttributes } from "react";
 import {
-  CheckCircle,
   AlertCircle,
+  CheckCircle,
   InfoCircle,
   XCircle,
 } from "@borderline-ui/icons";
+import type { HTMLAttributes } from "react";
+import { forwardRef } from "react";
 
 export type BadgeVariant =
   | "default"

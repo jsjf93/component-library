@@ -1,9 +1,14 @@
-import { forwardRef } from "react";
-import type { ButtonHTMLAttributes } from "react";
 import { Spinner } from "@borderline-ui/icons";
+import type { ButtonHTMLAttributes } from "react";
+import { forwardRef } from "react";
 
 export type ButtonVariant =
-  "primary" | "secondary" | "outline" | "ghost" | "link" | "destructive";
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "ghost"
+  | "link"
+  | "destructive";
 export type ButtonSize = "sm" | "default" | "lg" | "icon";
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

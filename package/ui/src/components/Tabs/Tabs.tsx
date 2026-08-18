@@ -1,5 +1,5 @@
-import { useState } from "react";
 import type { HTMLAttributes, ReactNode } from "react";
+import { useState } from "react";
 import { TabsContext } from "./TabsContext";
 
 export type TabsProps = HTMLAttributes<HTMLDivElement> & {

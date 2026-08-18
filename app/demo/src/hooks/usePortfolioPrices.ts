@@ -26,7 +26,11 @@ export function usePortfolioPrices(
     // Seed with any snapshots already cached from a prior subscription.
     list.forEach(apply);
 
-    return () => unsubscribers.forEach((unsub) => unsub());
+    return () => {
+      unsubscribers.forEach((unsub) => {
+        unsub();
+      });
+    };
   }, [key]);
 
   return prices;

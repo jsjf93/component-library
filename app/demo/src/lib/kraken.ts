@@ -103,6 +103,7 @@ export async function ohlc(restName: string, interval = 60): Promise<Candle[]> {
     `/OHLC?pair=${encodeURIComponent(restName)}&interval=${interval}`,
   );
   const series = Object.entries(result).find(([key]) => key !== "last")?.[1] as
-    Array<[number, string, string, string, string]> | undefined;
+    | Array<[number, string, string, string, string]>
+    | undefined;
   return (series ?? []).map((c) => ({ time: c[0], close: parseFloat(c[4]) }));
 }

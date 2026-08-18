@@ -1,6 +1,6 @@
+import { SidebarItem } from "@borderline-ui/ui";
 import type { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { SidebarItem } from "@borderline-ui/ui";
 
 type NavItemProps = {
   to: string;

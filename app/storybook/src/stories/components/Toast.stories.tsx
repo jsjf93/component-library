@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button, Toaster, toast } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   title: "Components/Toast",
@@ -169,7 +169,7 @@ export const Programmatic: Story = {
   render: () => (
     <>
       <div className="flex flex-wrap gap-2">
-        <Button onClick={() => toast.info("Toast " + Date.now())}>
+        <Button onClick={() => toast.info(`Toast ${Date.now()}`)}>
           Fire toast
         </Button>
         <Button variant="outline" onClick={() => toast.dismiss()}>

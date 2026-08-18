@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Toast } from "./Toast";
-import { subscribe, getSnapshot, getServerSnapshot } from "./toast-store";
+import { getServerSnapshot, getSnapshot, subscribe } from "./toast-store";
 
 export type ToasterPosition =
   | "top-left"

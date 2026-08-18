@@ -1,6 +1,6 @@
-import { forwardRef, useId } from "react";
-import type { SelectHTMLAttributes } from "react";
 import { ChevronDown } from "@borderline-ui/icons";
+import type { SelectHTMLAttributes } from "react";
+import { forwardRef, useId } from "react";
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string;

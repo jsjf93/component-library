@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components -- route table, not a fast-refresh boundary */
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "./App";

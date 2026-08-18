@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Bell, Download, Plus, Send, Settings } from "@borderline-ui/icons";
 import { Button } from "@borderline-ui/ui";
-import { Plus, Download, Send, Bell, Settings } from "@borderline-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   title: "Components/Button",

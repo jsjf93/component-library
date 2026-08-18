@@ -1,5 +1,5 @@
-import { forwardRef, useId, useState } from "react";
 import type { HTMLAttributes } from "react";
+import { forwardRef, useId, useState } from "react";
 
 export type RadioOption = {
   value: string;

@@ -2,13 +2,7 @@
   "name": "@borderline-ui/icons",
   "version": "0.1.0",
   "description": "Hand-authored SVG icon components for React, used by @borderline-ui/ui.",
-  "keywords": [
-    "react",
-    "icons",
-    "svg",
-    "components",
-    "borderline"
-  ],
+  "keywords": ["react", "icons", "svg", "components", "borderline"],
   "license": "MIT",
   "author": "Joshua Foster <jsjf93@hotmail.co.uk>",
   "homepage": "https://github.com/jsjf93/component-library/tree/main/package/icons#readme",
@@ -19,9 +13,7 @@
     "directory": "package/icons"
   },
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -38,26 +30,18 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
-    "prepublishOnly": "pnpm run build",
-    "lint": "eslint ."
+    "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^9.39.4",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
+    "typescript": "~7.0.2",
     "vite": "^8.0.9"
   }
 }

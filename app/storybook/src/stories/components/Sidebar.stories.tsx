@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  Leaf,
-  Home,
-  Wallet,
-  Send,
-  Receipt,
   BarChart,
   CreditCard,
-  Shield,
+  Home,
+  Leaf,
+  Receipt,
+  Send,
   Settings,
+  Shield,
+  Wallet,
 } from "@borderline-ui/icons";
 import {
   Sidebar,
-  SidebarHeader,
-  SidebarNav,
-  SidebarItem,
   SidebarFooter,
+  SidebarHeader,
+  SidebarItem,
+  SidebarNav,
 } from "@borderline-ui/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   title: "Components/Sidebar/Sidebar",
