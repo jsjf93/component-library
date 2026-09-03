@@ -50,13 +50,14 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
   const addHolding = useCallback((holding: Holding) => {
     setHoldings((prev) => {
       // Merge amounts if the symbol is already held.
-      const existing = prev.find((h) => h.symbol === holding.symbol);
-      if (existing) {
-        return prev.map((h) =>
-          h.symbol === holding.symbol
-            ? { ...h, amount: h.amount + holding.amount }
-            : h,
-        );
+      const existingIndex = prev.findIndex((h) => h.symbol === holding.symbol);
+      if (existingIndex !== -1) {
+        const next = [...prev];
+        next[existingIndex] = {
+          ...next[existingIndex],
+          amount: next[existingIndex].amount + holding.amount,
+        };
+        return next;
       }
       return [...prev, holding];
     });
